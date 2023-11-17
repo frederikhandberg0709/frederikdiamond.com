@@ -1,55 +1,65 @@
+"use client";
+
 import Link from "next/link";
-import Twitter from "public/assets/images/twitter.svg";
-import Nostr from "public/assets/images/nostr.svg";
-import Instagram from "public/assets/images/instagram.svg";
-import Noise from "public/assets/images/noise.png";
 import Image from "next/image";
-import FooterGradient from "public/assets/images/footer-gradient.png";
+import Twitter from "../../../public/twitter.svg";
+import Xlogo from "../../../public/x-logo.svg";
+import Nostr from "../../../public/nostr.png";
+import Instagram from "../../../public/instagram.svg";
+import Noise from "../../../public/noise.svg";
+import Contact from "./contact-form/Contact";
+import "./gradients.css";
 
 export default function Footer() {
   return (
     <>
       {/* Contact & Footer */}
-      <div id="contact" className="relative h-[100vh]">
+      <div id="contact" className="relative">
         <div className="relative z-10 h-full flex flex-col items-center">
           <div className="flex flex-col items-center mt-[100px]">
-            <h1 className="text-[50px] font-bold">CONTACT</h1>
+            <h1 className="text-[50px] font-bold mb-[50px]">CONTACT</h1>
             {/* Contact Options */}
-            {/* <Contact /> */}
+            <Contact />
             {/* Social Links */}
-            <div className="flex gap-[40px] mt-[60px]">
-              {/* Twitter */}
-              <Link href="https://twitter.com/frederikdiamond" target="_blank">
+            <div className="flex gap-[40px] mt-[100px]">
+              {/* X / Twitter */}
+              <Link
+                href="https://x.com/frederikdiamond"
+                target="_blank"
+                className="rounded-full flex items-center justify-center hover:scale-150 transition-all duration-200 ease-in-out h-[60px] w-[60px]"
+              >
                 <Image
-                  src={Twitter}
+                  src={Xlogo}
                   alt="Twitter"
-                  className="rounded-full h-[60px] hover:scale-150 transition-all ease-in-out"
+                  className="h-[40px] w-[40px]"
                 />
               </Link>
               {/* Nostr */}
               <Link
                 href="https://snort.social/p/npub1nj0crmtetu84a7j43yegy358mp8u0e4ye7ndkhtd8dg0edll4mpqn52gqz"
                 target="_blank"
+                className="rounded-full h-[60px] w-[60px]"
               >
                 <Image
                   src={Nostr}
                   alt="Nostr"
-                  className="rounded-full h-[60px] hover:scale-150 transition-all ease-in-out"
+                  className="rounded-full hover:scale-150 transition-all duration-200 ease-in-out"
                 />
               </Link>
               {/* Instagram */}
               <Link
                 href="https://www.instagram.com/frederik_diamond/"
                 target="_blank"
+                className="rounded-full h-[60px] w-[60px]"
               >
                 <Image
                   src={Instagram}
                   alt="Instagram"
-                  className="rounded-full h-[60px] hover:scale-150 transition-all ease-in-out"
+                  className="rounded-full hover:scale-150 transition-all duration-200 ease-in-out"
                 />
               </Link>
             </div>
-            <p className="mt-[60px] text-center text-[#5F5F5F]">
+            <p className="mt-[60px] text-center text-white/30">
               This website is open-source.
               <br />
               Check the code here:
@@ -73,20 +83,16 @@ export default function Footer() {
               </p>
             </Link>
           </div>
-          <p className="absolute bottom-[20px] text-[15px]">
+          <p className="text-[15px] mt-[50px] mb-[20px]">
             MADE WITH ❤️ BY{" "}
             <span className="font-semibold">FREDERIK DIAMOND</span>
           </p>
         </div>
         <div>
+          <div className="footer-gradient"></div>
           <Image
             src={Noise}
-            className="absolute z-[-1] bottom-0 w-full"
-            alt="Decoration"
-          />
-          <Image
-            src={FooterGradient}
-            className="absolute z-[-2] bottom-0 w-full"
+            className="absolute z-[-19] bottom-0 w-full h-full object-cover"
             alt="Decoration"
           />
         </div>

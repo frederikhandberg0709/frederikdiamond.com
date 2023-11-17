@@ -1,0 +1,13 @@
+.activeContactPopup {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-in-out 300ms;
+  visibility: visible;
+}
+
+.inactiveContactPopup {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all ease-in-out 300ms;
+  visibility: hidden;
+}

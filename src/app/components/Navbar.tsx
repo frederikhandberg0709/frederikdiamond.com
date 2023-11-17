@@ -1,5 +1,7 @@
+"use client";
+
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import { HashLink, NavHashLink } from "react-router-hash-link";
 
 const Navbar = () => {
   // Background opacity
@@ -39,48 +41,46 @@ const Navbar = () => {
       >
         <div className="flex justify-between w-[90%] mt-[15px] mb-[15px]">
           {/* Brand */}
-          <HashLink
-            to="#home"
-            smooth
-            className="text-center leading-[25px] group"
-          >
+          <Link href="#home" className="text-center leading-[25px] group">
             <p className="text-[20px] font-black text-[#4FACFE] group-hover:drop-shadow-[0_0px_15px_rgba(79,172,254,1)] transition-all ease-in-out duration-200">
               FREDERIK
             </p>
             <p className="text-[20px] font-black text-[#FE5196] group-hover:drop-shadow-[0_0px_15px_rgba(254,81,150,1)] transition-all ease-in-out duration-200">
               DIAMOND
             </p>
-          </HashLink>
+          </Link>
           {/* Desktop Menu */}
           <div className=" hidden sm:flex items-center">
-            <NavHashLink
-              to="#home"
-              smooth
-              className="text-[15px] font-medium px-[15px]"
+            <Link
+              href="#home"
+              className="text-[15px] text-gray-400 hover:text-white font-medium px-[15px] transition ease-in-out"
             >
               HOME
-            </NavHashLink>
-            <NavHashLink
-              to="#projects"
-              smooth
-              className="text-[15px] font-medium px-[15px]"
+            </Link>
+            <Link
+              href="#projects"
+              className="text-[15px] text-gray-400 hover:text-white font-medium px-[15px] transition ease-in-out"
             >
               PROJECTS
-            </NavHashLink>
-            <NavHashLink
-              to="#about"
-              smooth
-              className="text-[15px] font-medium px-[15px] mr-[10px]"
+            </Link>
+            <Link
+              href="#blog"
+              className="text-[15px] text-gray-400 hover:text-white font-medium px-[15px] transition ease-in-out"
+            >
+              BLOG
+            </Link>
+            <Link
+              href="#about"
+              className="text-[15px] text-gray-400 hover:text-white font-medium px-[15px] mr-[10px] transition ease-in-out"
             >
               ABOUT
-            </NavHashLink>
-            <NavHashLink
-              to="#contact"
-              smooth
-              className="text-[15px] font-medium px-[15px] py-[10px] border-[2px] border-white rounded-full hover:bg-white hover:text-black transition-all ease-in-out"
+            </Link>
+            <Link
+              href="#contact"
+              className="text-[15px] text-gray-400 font-medium px-[15px] py-[10px] border-[2px] border-gray-500 rounded-full hover:bg-white hover:border-white hover:text-black transition-all ease-in-out"
             >
               CONTACT
-            </NavHashLink>
+            </Link>
           </div>
           {/* Mobile Menu */}
           <div
@@ -107,46 +107,42 @@ const Navbar = () => {
       {openMenu ? (
         <div className="fixed z-[49] w-full h-full flex items-center justify-center bg-black/75 backdrop-blur-md">
           <div className="flex flex-col w-full">
-            <NavHashLink
-              to="#home"
+            <Link
+              href="#home"
               onClick={() => {
                 setOpenMenu(!openMenu);
               }}
-              smooth
               className="text-[25px] text-center font-bold w-full py-[20px] transition hover:bg-[#1a1a1a]/60"
             >
               HOME
-            </NavHashLink>
-            <NavHashLink
-              to="#projects"
+            </Link>
+            <Link
+              href="#projects"
               onClick={() => {
                 setOpenMenu(!openMenu);
               }}
-              smooth
               className="text-[25px] text-center font-bold w-full py-[20px] transition hover:bg-[#1a1a1a]/60"
             >
               PROJECTS
-            </NavHashLink>
-            <NavHashLink
-              to="#about"
+            </Link>
+            <Link
+              href="#about"
               onClick={() => {
                 setOpenMenu(!openMenu);
               }}
-              smooth
               className="text-[25px] text-center font-bold w-full py-[20px] transition hover:bg-[#1a1a1a]/60"
             >
               ABOUT
-            </NavHashLink>
-            <NavHashLink
-              to="#contact"
+            </Link>
+            <Link
+              href="#contact"
               onClick={() => {
                 setOpenMenu(!openMenu);
               }}
-              smooth
               className="text-[25px] text-center font-bold w-full py-[20px] transition hover:bg-[#1a1a1a]/60"
             >
               CONTACT
-            </NavHashLink>
+            </Link>
           </div>
         </div>
       ) : null}
