@@ -3,11 +3,25 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
-const Navbar = () => {
+interface NavbarProps {
+  homeRef: React.RefObject<HTMLElement>;
+  projectsRef: React.RefObject<HTMLElement>;
+  blogRef: React.RefObject<HTMLElement>;
+  contactRef: React.RefObject<HTMLElement>;
+}
+
+const Navbar: React.FC<NavbarProps> = ({
+  homeRef,
+  projectsRef,
+  blogRef,
+  contactRef,
+}) => {
   // Background opacity
   const [opacity, setOpacity] = useState(0);
   // Blurry effect behind the navbar
   const [blurValue, setBlurValue] = useState(0);
+
+  const [activeSection, setActiveSection] = useState<string>("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,13 +32,35 @@ const Navbar = () => {
       const maxScroll = document.body.clientHeight * 0.05;
       const newBlurValue = Math.min(15, (window.scrollY / maxScroll) * 15); // Maximum 15px for backdrop blur
       setBlurValue(newBlurValue);
+
+      // Navbar active section
+      const sections = [
+        { id: "home", ref: homeRef },
+        { id: "projects", ref: projectsRef },
+        { id: "blog", ref: blogRef },
+        { id: "contact", ref: contactRef },
+      ];
+
+      const currentSection = sections.find((section) => {
+        const element = section.ref.current;
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 0 && rect.bottom > 0;
+        }
+        return false;
+      });
+
+      setActiveSection(currentSection ? currentSection.id : "");
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [homeRef, projectsRef, blogRef, contactRef]);
+
+  const linkClass = (section: string) =>
+    `text-[15px] font-medium px-[15px] ${
+      activeSection === section ? "text-white" : "text-gray-400"
+    } hover:text-white transition ease-in-out`;
 
   const navbarStyle = {
     backgroundColor: `rgba(0, 0, 0, ${opacity})`,
@@ -51,34 +87,19 @@ const Navbar = () => {
           </Link>
           {/* Desktop Menu */}
           <div className=" hidden sm:flex items-center">
-            <Link
-              href="#home"
-              className="text-[15px] text-gray-400 hover:text-white font-medium px-[15px] transition ease-in-out"
-            >
+            <Link href="#home" className={linkClass("home")}>
               HOME
             </Link>
-            <Link
-              href="#projects"
-              className="text-[15px] text-gray-400 hover:text-white font-medium px-[15px] transition ease-in-out"
-            >
+            <Link href="#projects" className={linkClass("projects")}>
               PROJECTS
             </Link>
-            <Link
-              href="#blog"
-              className="text-[15px] text-gray-400 hover:text-white font-medium px-[15px] transition ease-in-out"
-            >
+            <Link href="#blog" className={linkClass("blog")}>
               BLOG
             </Link>
-            <Link
-              href="#about"
-              className="text-[15px] text-gray-400 hover:text-white font-medium px-[15px] mr-[10px] transition ease-in-out"
-            >
+            <Link href="#about" className={linkClass("about")}>
               ABOUT
             </Link>
-            <Link
-              href="#contact"
-              className="text-[15px] text-gray-400 font-medium px-[15px] py-[10px] border-[2px] border-gray-500 rounded-full hover:bg-white hover:border-white hover:text-black transition-all ease-in-out"
-            >
+            <Link href="#contact" className={linkClass("contact")}>
               CONTACT
             </Link>
           </div>

@@ -132,7 +132,7 @@ export default class Contact extends React.Component<{}, State> {
           </form>
         </div>
 
-        <div className="flex gap-[20px] mt-[30px]">
+        <div className="flex gap-[20px] mt-[100px]">
           <div className="w-[350px] h-[100px] truncate flex items-center gap-[15px] px-[20px] py-[10px] rounded-[10px] hover:bg-white hover:bg-opacity-10 transition duration-200">
             <div className="h-[50px] w-[50px] bg-white rounded-full flex items-center justify-center">
               <Image src={ProtonMail} alt="Email" className="h-[20px]" />

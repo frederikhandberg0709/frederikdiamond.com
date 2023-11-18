@@ -1,3 +1,5 @@
+"use client";
+
 /* eslint-disable @next/next/no-img-element */
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
@@ -7,13 +9,24 @@ import PostDropdownMenu from "./components/PostDropdownMenu";
 import PostActionButton from "./components/PostActionButton";
 import "./components/gradients.css";
 import Noise from "../../public/noise.svg";
+import { useRef } from "react";
 
 export default function Home() {
+  const homeRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
+  const blogRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
+
   return (
     <main>
-      <Navbar />
-      <div id="home" className="relative h-[100vh] w-[100%]">
-        <header className="flex justify-center h-[100%] w-[100%] z-10">
+      <Navbar
+        homeRef={homeRef}
+        projectsRef={projectsRef}
+        blogRef={blogRef}
+        contactRef={contactRef}
+      />
+      <div ref={homeRef} id="home" className="relative w-[100%]">
+        <header className="flex justify-center h-[100vh] w-full z-10">
           <h1 className="mt-[200px] z-10 text-[50px] font-black text-center leading-[60px]">
             UPCOMING
             <br />
@@ -26,56 +39,121 @@ export default function Home() {
           className="absolute z-[-10] top-0 w-full h-full"
           alt="Decoration"
         /> */}
-      </div>
-      <div className="flex justify-center h-[100vh] z-10">
-        {/* <div className="md:gap-[100px] w-[90%] md2:flex lg:w-[800px]"> */}
-        <div className="flex w-[800px] gap-[50px]">
-          <h1 className="font-montserrat text-[50px] font-black leading-[70px]">
-            PRIVACY.
-            <br />
-            FREEDOM.
-            <br />
-            ANONYMITY.
-          </h1>
-          <div className="flex flex-col gap-[15px] mt-[50px] text-[16px]">
-            <p className="font-semibold">I believe privacy is a human right.</p>
-            <div className="flex flex-col gap-[15px] opacity-80">
-              <p>
-                Without the freedom to use technology that empowers anonymity,
-                we don’t have any privacy.
+        <div className="flex justify-center py-[200px] z-10">
+          {/* <div className="md:gap-[100px] w-[90%] md2:flex lg:w-[800px]"> */}
+          <div className="flex w-[800px] gap-[50px]">
+            <h1 className="font-montserrat text-[50px] font-black leading-[70px]">
+              PRIVACY.
+              <br />
+              FREEDOM.
+              <br />
+              ANONYMITY.
+            </h1>
+            <div className="flex flex-col gap-[15px] mt-[50px] text-[16px]">
+              <p className="font-semibold">
+                I believe privacy is a human right.
               </p>
-              <p>
-                The essence of privacy hinges on our ability to harness
-                technology that empowers anonymity. Without this capability, the
-                very concept of privacy becomes fragile.
-              </p>
-              <p>
-                We are witnessing the introduction and enactment of legislation
-                that directly challenges our right to privacy. For instance, the
-                British government has put forward a bill that seeks to outlaw
-                end-to-end encrypted messaging.
-              </p>
-              <p>
-                Governments worldwide seem to be in opposition to our
-                fundamental privacy rights. It is our duty to resist their
-                encroachments. Otherwise, we risk descending into a state of
-                tyranny, and reclaiming our freedoms may prove to be an arduous
-                journey.
-              </p>
+              <div className="flex flex-col gap-[15px] opacity-80">
+                <p>
+                  Without the freedom to use technology that empowers anonymity,
+                  we don’t have any privacy.
+                </p>
+                <p>
+                  The essence of privacy hinges on our ability to harness
+                  technology that empowers anonymity. Without this capability,
+                  the very concept of privacy becomes fragile.
+                </p>
+                <p>
+                  We are witnessing the introduction and enactment of
+                  legislation that directly challenges our right to privacy. For
+                  instance, the British government has put forward a bill that
+                  seeks to outlaw end-to-end encrypted messaging.
+                </p>
+                <p>
+                  Governments worldwide seem to be in opposition to our
+                  fundamental privacy rights. It is our duty to resist their
+                  encroachments. Otherwise, we risk descending into a state of
+                  tyranny, and reclaiming our freedoms may prove to be an
+                  arduous journey.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
       {/* My Projects */}
-      <div id="projects" className="flex justify-center py-[100px]">
-        <div className="flex flex-col items-center gap-[50px] w-[800px]">
+      <div className="flex justify-center">
+        <div
+          id="projects"
+          ref={projectsRef}
+          className="flex flex-col items-center gap-[50px] pb-[100px] w-[800px]"
+        >
           <h1 className="font-bold text-[50px] mt-[100px]">MY PROJECTS</h1>
+          <div className="flex flex-col gap-[150px]">
+            <div className="flex flex-col gap-[50px]">
+              <div className="flex flex-col items-start">
+                <h2 className="text-[35px] font-bold">BLOPstr!</h2>
+                <p className="text-[15px] opacity-50 mt-[10px]">
+                  BLOPstr is a beautiful and easy-to-use social media built on
+                  the open-protocol called Nostr.
+                  <br />
+                  Nostr is a decentralized global communications protocol that
+                  truly enables freedom and anti-censorship. Nostr has many
+                  great use-cases, like building marketplaces, messaging apps,
+                  social medias, and much more!
+                </p>
+                <Link
+                  href="blopstr.com"
+                  className="bg-blue-500 font-semibold text-[15px] mt-[20px] px-[20px] py-[12px] rounded-md cursor-pointer relative bottom-0 hover:drop-shadow-[0_10px_30px_rgba(59,130,246,0.75)] hover:bottom-[5px] transition-all ease-in-out"
+                >
+                  VISIT
+                </Link>
+              </div>
+              {/* Image of project */}
+              <div className="rounded-[15px] h-[500px] w-full relative bottom-0 hover:bottom-[10px] ease-in-out duration-300">
+                <img
+                  src="https://imgproxy.iris.to/insecure/plain/https://image.nostr.build/07270fb2796c41f0168f5940cc6de38a6b5472fc1879683c7ebd31de8e46ebc9.png"
+                  alt="Blopstr Preview"
+                  className="object-cover rounded-[15px]"
+                />
+              </div>
+            </div>
+            <div className="flex flex-col gap-[50px]">
+              <div className="flex flex-col items-start">
+                <h2 className="text-[35px] font-bold">CRYPTOWITHOUTKYC</h2>
+                <p className="text-[15px] opacity-50 mt-[10px]">
+                  An open-source, decentralized, and peer-to-peer crypto trading
+                  platform where users can buy and sell bitcoin and monero
+                  without any KYC-verification. The platform is running on the
+                  Nostr protocol using NIP-15 (the Nostr marketplace).
+                </p>
+                <Link
+                  href="cryptowithoutkyc.com"
+                  className="bg-blue-500 font-semibold text-[15px] mt-[20px] px-[20px] py-[12px] rounded-md cursor-pointer relative bottom-0 hover:drop-shadow-[0_10px_30px_rgba(59,130,246,0.75)] hover:bottom-[5px] transition-all ease-in-out"
+                >
+                  VISIT
+                </Link>
+              </div>
+              {/* Image of project */}
+              <div className="rounded-[15px] h-[500px] w-full relative bottom-0 hover:bottom-[10px] ease-in-out duration-300">
+                <img
+                  src="https://imgproxy.iris.to/insecure/plain/https://image.nostr.build/07270fb2796c41f0168f5940cc6de38a6b5472fc1879683c7ebd31de8e46ebc9.png"
+                  alt="Blopstr Preview"
+                  className="object-cover rounded-[15px]"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       {/* My Nostr Timeline */}
-      <div id="blog" className="flex justify-center py-[100px]">
-        <div className="flex flex-col items-center gap-[50px] w-[800px]">
-          <h1 className="font-bold text-[50px] mt-[100px]">MY NOSTR BLOG</h1>
+      <div className="flex justify-center">
+        <div
+          id="blog"
+          ref={blogRef}
+          className="flex flex-col items-center gap-[50px] w-[800px] py-[100px]"
+        >
+          <h1 className="font-bold text-[50px]">MY NOSTR BLOG</h1>
           <div className="w-[600px]">
             <div className="flex flex-col gap-[10px] border border-gray-800 bg-black/50 backdrop-blur-md p-[15px] rounded-[15px]">
               {/* Author */}
@@ -135,7 +213,9 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      <Footer />
+      <div ref={contactRef}>
+        <Footer />
+      </div>
     </main>
   );
 }
