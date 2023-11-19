@@ -84,7 +84,14 @@ const Navbar: React.FC<NavbarProps> = ({
       >
         <div className="flex justify-between w-[90%] mt-[15px] mb-[15px]">
           {/* Brand */}
-          <Link href="#home" className="text-center leading-[25px] group">
+          <Link
+            href="#home"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavLinkClick("home");
+            }}
+            className="text-center leading-[25px] group"
+          >
             <p className="text-[20px] font-black text-[#4FACFE] group-hover:drop-shadow-[0_0px_15px_rgba(79,172,254,1)] transition-all ease-in-out duration-200">
               FREDERIK
             </p>
