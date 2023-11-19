@@ -57,6 +57,13 @@ const Navbar: React.FC<NavbarProps> = ({
     return () => window.removeEventListener("scroll", handleScroll);
   }, [homeRef, projectsRef, blogRef, contactRef]);
 
+  const handleNavLinkClick = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const linkClass = (section: string) =>
     `text-[15px] font-medium px-[15px] ${
       activeSection === section ? "text-white" : "text-gray-400"
@@ -87,19 +94,54 @@ const Navbar: React.FC<NavbarProps> = ({
           </Link>
           {/* Desktop Menu */}
           <div className=" hidden sm:flex items-center">
-            <Link href="#home" className={linkClass("home")}>
+            <Link
+              href="#home"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavLinkClick("home");
+              }}
+              className={linkClass("home")}
+            >
               HOME
             </Link>
-            <Link href="#projects" className={linkClass("projects")}>
+            <Link
+              href="#projects"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavLinkClick("projects");
+              }}
+              className={linkClass("projects")}
+            >
               PROJECTS
             </Link>
-            <Link href="#blog" className={linkClass("blog")}>
+            <Link
+              href="#blog"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavLinkClick("blog");
+              }}
+              className={linkClass("blog")}
+            >
               BLOG
             </Link>
-            <Link href="#about" className={linkClass("about")}>
+            <Link
+              href="#about"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavLinkClick("about");
+              }}
+              className={linkClass("about")}
+            >
               ABOUT
             </Link>
-            <Link href="#contact" className={linkClass("contact")}>
+            <Link
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavLinkClick("contact");
+              }}
+              className={linkClass("contact")}
+            >
               CONTACT
             </Link>
           </div>
@@ -109,7 +151,7 @@ const Navbar: React.FC<NavbarProps> = ({
               setOpenMenu(!openMenu);
             }}
             id="mobile-menu"
-            className="hidden h-full items-center justify-center cursor-pointer"
+            className="flex sm:hidden h-full items-center justify-center cursor-pointer"
           >
             <svg
               width="40"
@@ -130,8 +172,10 @@ const Navbar: React.FC<NavbarProps> = ({
           <div className="flex flex-col w-full">
             <Link
               href="#home"
-              onClick={() => {
+              onClick={(e) => {
                 setOpenMenu(!openMenu);
+                e.preventDefault();
+                handleNavLinkClick("home");
               }}
               className="text-[25px] text-center font-bold w-full py-[20px] transition hover:bg-[#1a1a1a]/60"
             >
@@ -139,17 +183,32 @@ const Navbar: React.FC<NavbarProps> = ({
             </Link>
             <Link
               href="#projects"
-              onClick={() => {
+              onClick={(e) => {
                 setOpenMenu(!openMenu);
+                e.preventDefault();
+                handleNavLinkClick("projects");
               }}
               className="text-[25px] text-center font-bold w-full py-[20px] transition hover:bg-[#1a1a1a]/60"
             >
               PROJECTS
             </Link>
             <Link
-              href="#about"
-              onClick={() => {
+              href="#blog"
+              onClick={(e) => {
                 setOpenMenu(!openMenu);
+                e.preventDefault();
+                handleNavLinkClick("blog");
+              }}
+              className="text-[25px] text-center font-bold w-full py-[20px] transition hover:bg-[#1a1a1a]/60"
+            >
+              BLOG
+            </Link>
+            <Link
+              href="#about"
+              onClick={(e) => {
+                setOpenMenu(!openMenu);
+                e.preventDefault();
+                handleNavLinkClick("about");
               }}
               className="text-[25px] text-center font-bold w-full py-[20px] transition hover:bg-[#1a1a1a]/60"
             >
@@ -157,8 +216,10 @@ const Navbar: React.FC<NavbarProps> = ({
             </Link>
             <Link
               href="#contact"
-              onClick={() => {
+              onClick={(e) => {
                 setOpenMenu(!openMenu);
+                e.preventDefault();
+                handleNavLinkClick("contact");
               }}
               className="text-[25px] text-center font-bold w-full py-[20px] transition hover:bg-[#1a1a1a]/60"
             >

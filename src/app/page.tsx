@@ -25,7 +25,7 @@ export default function Home() {
         blogRef={blogRef}
         contactRef={contactRef}
       />
-      <div ref={homeRef} id="home" className="relative w-[100%]">
+      <div ref={homeRef} id="home" className="relative w-full">
         <header className="flex justify-center h-[100vh] w-full z-10">
           <h1 className="mt-[200px] z-10 text-[50px] font-black text-center leading-[60px]">
             UPCOMING
@@ -39,9 +39,8 @@ export default function Home() {
           className="absolute z-[-10] top-0 w-full h-full"
           alt="Decoration"
         /> */}
-        <div className="flex justify-center py-[200px] z-10">
-          {/* <div className="md:gap-[100px] w-[90%] md2:flex lg:w-[800px]"> */}
-          <div className="flex w-[800px] gap-[50px]">
+        <div className="flex justify-center py-[200px] w-full z-10">
+          <div className="flex w-[90%] flex-col md:flex-row md:max-w-[800px] md:justify-center gap-[50px]">
             <h1 className="font-montserrat text-[50px] font-black leading-[70px]">
               PRIVACY.
               <br />
@@ -86,7 +85,7 @@ export default function Home() {
         <div
           id="projects"
           ref={projectsRef}
-          className="flex flex-col items-center gap-[50px] pb-[100px] w-[800px]"
+          className="flex flex-col items-center gap-[50px] pb-[100px] w-[90%] md:max-w-[800px]"
         >
           <h1 className="font-bold text-[50px] mt-[100px]">MY PROJECTS</h1>
           <div className="flex flex-col gap-[150px]">
