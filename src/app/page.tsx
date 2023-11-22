@@ -8,7 +8,7 @@ import Link from "next/link";
 import PostDropdownMenu from "./components/PostDropdownMenu";
 import PostActionButton from "./components/PostActionButton";
 import "./components/gradients.css";
-import Noise from "../../public/noise.svg";
+// import Noise from "../../public/noise.svg";
 import { useRef } from "react";
 
 export default function Home() {
@@ -111,7 +111,7 @@ export default function Home() {
               {/* Image of project */}
               <div className="rounded-[15px] h-[500px] w-full relative bottom-0 hover:bottom-[10px] ease-in-out duration-300">
                 <img
-                  src="https://imgproxy.iris.to/insecure/plain/https://image.nostr.build/07270fb2796c41f0168f5940cc6de38a6b5472fc1879683c7ebd31de8e46ebc9.png"
+                  src="/nextjs-github-pages/https://imgproxy.iris.to/insecure/plain/https://image.nostr.build/07270fb2796c41f0168f5940cc6de38a6b5472fc1879683c7ebd31de8e46ebc9.png"
                   alt="Blopstr Preview"
                   className="object-cover rounded-[15px]"
                 />
@@ -136,7 +136,7 @@ export default function Home() {
               {/* Image of project */}
               <div className="rounded-[15px] h-[500px] w-full relative bottom-0 hover:bottom-[10px] ease-in-out duration-300">
                 <img
-                  src="https://imgproxy.iris.to/insecure/plain/https://image.nostr.build/07270fb2796c41f0168f5940cc6de38a6b5472fc1879683c7ebd31de8e46ebc9.png"
+                  src="/nextjs-github-pages/https://imgproxy.iris.to/insecure/plain/https://image.nostr.build/07270fb2796c41f0168f5940cc6de38a6b5472fc1879683c7ebd31de8e46ebc9.png"
                   alt="Blopstr Preview"
                   className="object-cover rounded-[15px]"
                 />
@@ -192,7 +192,7 @@ export default function Home() {
                 in nec nisl hendrerit volutpat sit vestibulum.
               </p>
               <img
-                src="https://images.pexels.com/photos/1797121/pexels-photo-1797121.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                src="/nextjs-github-pages/https://images.pexels.com/photos/1797121/pexels-photo-1797121.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                 alt="Post image"
                 className="rounded-[10px]"
               />
