@@ -7,9 +7,9 @@ import Image from "next/image";
 import CopyToClipboard from "../CopyToClipboard";
 import ContactPopup from "./ContactPopup";
 import ButtonMailto from "./ButtonMailto";
-import ProtonMail from "../../assets/protonmail.svg";
-import Session from "../../assets/session.svg";
-import SimpleX from "../../assets/simplex.svg";
+import ProtonMail from "public/protonmail.svg";
+import Session from "public/session.svg";
+import SimpleX from "public/simplex.svg";
 
 type State = {
   email: string;
