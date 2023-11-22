@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import Twitter from "../../../public/twitter.svg";
+// import Twitter from "../../../public/twitter.svg";
 import Xlogo from "../../../public/x-logo.svg";
 import Nostr from "../../../public/nostr.png";
 import Instagram from "../../../public/instagram.svg";
