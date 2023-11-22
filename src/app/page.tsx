@@ -26,12 +26,15 @@ export default function Home() {
         contactRef={contactRef}
       />
       <div ref={homeRef} id="home" className="relative w-full">
-        <header className="flex justify-center h-[100vh] w-full z-10">
-          <h1 className="mt-[200px] z-10 text-[50px] font-black text-center leading-[60px]">
+        <header className="flex flex-col items-center gap-[20px] h-[100vh] w-full z-10">
+          <h1 className="mt-[250px] z-10 text-[50px] font-black text-center leading-[60px]">
             UPCOMING
             <br />
             WEB / APP DEVELOPER
           </h1>
+          <p className="text-[20px] text-amber-400 font-bold">
+            🚧 WEBSITE UNDER CONSTRUCTION 🚧
+          </p>
         </header>
         {/* <div className="header-gradient"></div>
         <Image
@@ -58,22 +61,18 @@ export default function Home() {
                   we don’t have any privacy.
                 </p>
                 <p>
-                  The essence of privacy hinges on our ability to harness
-                  technology that empowers anonymity. Without this capability,
-                  the very concept of privacy becomes fragile.
+                  We see laws being proposed and passed that are in direct
+                  conflict with the right to privacy.
                 </p>
                 <p>
-                  We are witnessing the introduction and enactment of
-                  legislation that directly challenges our right to privacy. For
-                  instance, the British government has put forward a bill that
-                  seeks to outlaw end-to-end encrypted messaging.
+                  For example, the British government has proposed a bill that
+                  would make end-to-end encrypted messaging illegal.
                 </p>
                 <p>
-                  Governments worldwide seem to be in opposition to our
-                  fundamental privacy rights. It is our duty to resist their
-                  encroachments. Otherwise, we risk descending into a state of
-                  tyranny, and reclaiming our freedoms may prove to be an
-                  arduous journey.
+                  Governments around the world are at war with our rights to
+                  privacy. We must not let them win! Otherwise, we risk being on
+                  a path towards a tyrannical state, from which reversing course
+                  will not be easy.
                 </p>
               </div>
             </div>
@@ -101,12 +100,20 @@ export default function Home() {
                   great use-cases, like building marketplaces, messaging apps,
                   social medias, and much more!
                 </p>
-                <Link
-                  href="blopstr.com"
-                  className="bg-blue-500 font-semibold text-[15px] mt-[20px] px-[20px] py-[12px] rounded-md cursor-pointer relative bottom-0 hover:drop-shadow-[0_10px_30px_rgba(59,130,246,0.75)] hover:bottom-[5px] transition-all ease-in-out"
-                >
-                  VISIT
-                </Link>
+                <div className="flex items-center gap-[30px] mt-[20px]">
+                  <Link
+                    href="blopstr.com"
+                    className="bg-blue-500 font-semibold text-[15px] px-[20px] py-[12px] rounded-md cursor-pointer relative bottom-0 hover:drop-shadow-[0_10px_30px_rgba(59,130,246,0.75)] hover:bottom-[5px] transition-all ease-in-out"
+                  >
+                    VISIT
+                  </Link>
+                  <Link
+                    href="/projects/blopstr"
+                    className="text-[15px] text-white font-semibold hover:text-blue-500 hover:underline underline-offset-4"
+                  >
+                    Read more
+                  </Link>
+                </div>
               </div>
               {/* Image of project */}
               <div className="rounded-[15px] h-[500px] w-full relative bottom-0 hover:bottom-[10px] ease-in-out duration-300">
@@ -126,12 +133,20 @@ export default function Home() {
                   without any KYC-verification. The platform is running on the
                   Nostr protocol using NIP-15 (the Nostr marketplace).
                 </p>
-                <Link
-                  href="cryptowithoutkyc.com"
-                  className="bg-blue-500 font-semibold text-[15px] mt-[20px] px-[20px] py-[12px] rounded-md cursor-pointer relative bottom-0 hover:drop-shadow-[0_10px_30px_rgba(59,130,246,0.75)] hover:bottom-[5px] transition-all ease-in-out"
-                >
-                  VISIT
-                </Link>
+                <div className="flex items-center gap-[30px] mt-[20px]">
+                  <Link
+                    href="cryptowithoutkyc.com"
+                    className="bg-blue-500 font-semibold text-[15px] px-[20px] py-[12px] rounded-md cursor-pointer relative bottom-0 hover:drop-shadow-[0_10px_30px_rgba(59,130,246,0.75)] hover:bottom-[5px] transition-all ease-in-out"
+                  >
+                    VISIT
+                  </Link>
+                  <Link
+                    href="/projects/cryptowithoutkyc"
+                    className="text-[15px] text-white font-semibold hover:text-blue-500 hover:underline underline-offset-4"
+                  >
+                    Read more
+                  </Link>
+                </div>
               </div>
               {/* Image of project */}
               <div className="rounded-[15px] h-[500px] w-full relative bottom-0 hover:bottom-[10px] ease-in-out duration-300">
