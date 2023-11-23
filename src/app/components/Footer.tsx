@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 // import Twitter from "../../../public/twitter.svg";
@@ -10,16 +11,26 @@ import Noise from "../../../public/noise.svg";
 import Contact from "./contact-form/Contact";
 import "./gradients.css";
 
-export default function Footer() {
+interface Props {
+  contactVisibility: boolean;
+}
+
+const Footer: React.FC<Props> = ({ contactVisibility }) => {
   return (
     <>
       {/* Contact & Footer */}
       <div id="contact" className="relative">
         <div className="relative z-10 h-full flex flex-col items-center">
           <div className="flex flex-col items-center mt-[100px]">
-            <h1 className="text-[50px] font-bold mb-[50px]">CONTACT</h1>
-            {/* Contact Options */}
-            <Contact />
+            {/* Contact */}
+            <div
+              className={
+                contactVisibility ? "flex flex-col items-center" : "hidden"
+              }
+            >
+              <h1 className="text-[50px] font-bold mb-[50px]">CONTACT</h1>
+              <Contact />
+            </div>
             {/* Social Links */}
             <div className="flex gap-[40px] mt-[100px]">
               {/* X / Twitter */}
@@ -99,4 +110,6 @@ export default function Footer() {
       </div>
     </>
   );
-}
+};
+
+export default Footer;

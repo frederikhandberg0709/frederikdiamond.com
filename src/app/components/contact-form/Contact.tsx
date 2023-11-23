@@ -64,6 +64,7 @@ export default class Contact extends React.Component<{}, State> {
   render() {
     return (
       <>
+        {/* Contact Form */}
         <div className="w-[500px]">
           <form
             action="mailto:290750@via.dk"
@@ -132,6 +133,7 @@ export default class Contact extends React.Component<{}, State> {
           </form>
         </div>
 
+        {/* Contact Options */}
         <div className="flex flex-col xl:flex-row gap-[20px] mt-[100px]">
           <div className="w-[350px] h-[100px] truncate flex items-center gap-[15px] px-[20px] py-[10px] rounded-[10px] hover:bg-white hover:bg-opacity-10 transition duration-200">
             <div className="h-[50px] w-[50px] bg-white rounded-full flex items-center justify-center">

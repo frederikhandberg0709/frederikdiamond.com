@@ -9,13 +9,15 @@ import PostDropdownMenu from "./components/PostDropdownMenu";
 import PostActionButton from "./components/PostActionButton";
 import "./components/gradients.css";
 // import Noise from "../../public/noise.svg";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function Home() {
   const homeRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
   const blogRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
+
+  const [contactVisibility, setContactVisibility] = useState<boolean>(true);
 
   return (
     <main>
@@ -228,7 +230,7 @@ export default function Home() {
         </div>
       </div>
       <div ref={contactRef}>
-        <Footer />
+        <Footer contactVisibility={contactVisibility} />
       </div>
     </main>
   );
