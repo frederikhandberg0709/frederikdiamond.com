@@ -47,7 +47,7 @@ const Footer: React.FC<Props> = ({ contactVisibility }) => {
               </Link>
               {/* Nostr */}
               <Link
-                href="https://snort.social/p/npub1nj0crmtetu84a7j43yegy358mp8u0e4ye7ndkhtd8dg0edll4mpqn52gqz"
+                href="https://primal.net/p/npub1nj0crmtetu84a7j43yegy358mp8u0e4ye7ndkhtd8dg0edll4mpqn52gqz"
                 target="_blank"
                 className="rounded-full h-[60px] w-[60px]"
               >
