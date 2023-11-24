@@ -6,9 +6,10 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Image from "next/image";
 import Link from "next/link";
-import PostDropdownMenu from "./components/PostDropdownMenu";
+import PostDropdownMenu from "./components/nostr/PostDropdownMenu";
 import PostActionButton from "./components/PostActionButton";
 import "./components/gradients.css";
+import NotesList from "./components/nostr/NotesList";
 // import Noise from "../../public/noise.svg";
 
 export default function Home() {
@@ -170,6 +171,7 @@ export default function Home() {
           className="flex flex-col items-center gap-[50px] w-[800px] py-[100px]"
         >
           <h1 className="font-bold text-[50px]">MY NOSTR BLOG</h1>
+          <NotesList />
           <div className="w-[600px]">
             <div className="flex flex-col gap-[10px] border border-gray-800 bg-black/50 backdrop-blur-md p-[15px] rounded-[15px]">
               {/* Author */}
