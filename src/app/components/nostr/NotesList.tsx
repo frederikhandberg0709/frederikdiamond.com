@@ -102,7 +102,18 @@ const ProfileFeed = () => {
               <p className="text-[15px] leading-normal overflow-x-hidden">
                 {event.content}
               </p>
-              <img src={event.content} alt="" className="rounded-[10px]" />
+              {(() => {
+                const regex = /https:\/\/.*\.(jpg|png)/;
+                const match = event.content.match(regex);
+                return match ? (
+                  <img
+                    src={match[0]}
+                    alt="This is an image uploaded by the FREDERIK DIAMOND's profile."
+                    className="rounded-[10px]"
+                  />
+                ) : null;
+              })()}
+              {/* <img src={event.content} alt="" className="rounded-[10px]" /> */}
             </div>
           </p>
         ))}
