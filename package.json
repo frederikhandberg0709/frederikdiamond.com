@@ -11,9 +11,12 @@
     "static": "next build && touch ./out/.nojekyll && echo 'www.frederikdiamond.com' > ./out/CNAME"
   },
   "dependencies": {
+    "@nostr-dev-kit/ndk": "^2.0.6",
+    "@nostr-dev-kit/ndk-react": "^0.1.1",
     "next": "14.0.2",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "use-debounce": "^10.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -1,6 +1,7 @@
 "use client";
-
 /* eslint-disable @next/next/no-img-element */
+
+import { useEffect, useRef, useState } from "react";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Image from "next/image";
@@ -9,7 +10,6 @@ import PostDropdownMenu from "./components/PostDropdownMenu";
 import PostActionButton from "./components/PostActionButton";
 import "./components/gradients.css";
 // import Noise from "../../public/noise.svg";
-import { useRef, useState } from "react";
 
 export default function Home() {
   const homeRef = useRef<HTMLDivElement>(null);
@@ -120,7 +120,7 @@ export default function Home() {
               {/* Image of project */}
               <div className="rounded-[15px] h-[500px] w-full relative bottom-0 hover:bottom-[10px] ease-in-out duration-300">
                 <img
-                  src="https://imgproxy.iris.to/insecure/plain/https://image.nostr.build/07270fb2796c41f0168f5940cc6de38a6b5472fc1879683c7ebd31de8e46ebc9.png"
+                  src="https://media.primal.net/uploads/b/ee/d1/beed1c36b09b892871d9d0e9566dc7a0556077a38253608fc89c57b455ab35aa.png"
                   alt="Blopstr Preview"
                   className="object-cover rounded-[15px]"
                 />
@@ -222,7 +222,7 @@ export default function Home() {
             </div>
           </div>
           <Link
-            href="#"
+            href="https://primal.net/p/npub1nj0crmtetu84a7j43yegy358mp8u0e4ye7ndkhtd8dg0edll4mpqn52gqz"
             className="bg-blue-500 font-semibold text-[15px] px-[20px] py-[12px] rounded-md cursor-pointer mt-[10px] relative bottom-0 hover:drop-shadow-[0_10px_30px_rgba(59,130,246,0.75)] hover:bottom-[5px] transition-all ease-in-out"
           >
             SHOW ALL

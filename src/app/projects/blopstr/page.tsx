@@ -64,7 +64,7 @@ export default function BLOPstr() {
               </p>
               <div className="rounded-[15px] h-[500px] w-full mt-[50px] relative bottom-0 hover:bottom-[10px] ease-in-out duration-300">
                 <img
-                  src="https://imgproxy.iris.to/insecure/plain/https://image.nostr.build/07270fb2796c41f0168f5940cc6de38a6b5472fc1879683c7ebd31de8e46ebc9.png"
+                  src="https://media.primal.net/uploads/b/ee/d1/beed1c36b09b892871d9d0e9566dc7a0556077a38253608fc89c57b455ab35aa.png"
                   alt="Blopstr Preview"
                   className="object-cover rounded-[15px]"
                 />
