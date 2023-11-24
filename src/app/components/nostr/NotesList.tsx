@@ -66,12 +66,13 @@ const ProfileFeed = () => {
         {events.slice(0, maxElements).map((event) => (
           <p key={event.id}>
             <div className="flex flex-col gap-[10px] w-[600px] border border-gray-900 hover:border-gray-800 transition duration-200 bg-black/50 backdrop-blur-md p-[15px] rounded-[15px]">
-              {/* <Profile /> */}
+              {/* Author */}
               <div className="flex items-center justify-between">
                 <Link
                   href="https://primal.net/p/npub1nj0crmtetu84a7j43yegy358mp8u0e4ye7ndkhtd8dg0edll4mpqn52gqz"
                   className="flex gap-[10px] group"
                 >
+                  {/* Profile picture */}
                   <img
                     src={userData?.picture}
                     alt="Frederik Diamond"
@@ -82,11 +83,11 @@ const ProfileFeed = () => {
                   <div className="flex flex-col gap-[1px]">
                     {/* Profile name */}
                     <p className="font-bold text-[13px] group-hover:text-[#8E30EB]">
-                      {userData?.name}
+                      {userData?.display_name}
                     </p>
                     {/* Username */}
                     <p className="text-[13px] text-gray-500">
-                      @frederik_diamond
+                      @{userData?.name}
                     </p>
                   </div>
                 </Link>
@@ -99,9 +100,11 @@ const ProfileFeed = () => {
                   <PostDropdownMenu />
                 </div>
               </div>
+              {/* Text content */}
               <p className="text-[15px] leading-normal overflow-x-hidden">
                 {event.content}
               </p>
+              {/* Image */}
               {(() => {
                 const regex = /https:\/\/.*\.(jpg|png)/;
                 const match = event.content.match(regex);
@@ -113,7 +116,6 @@ const ProfileFeed = () => {
                   />
                 ) : null;
               })()}
-              {/* <img src={event.content} alt="" className="rounded-[10px]" /> */}
             </div>
           </p>
         ))}
