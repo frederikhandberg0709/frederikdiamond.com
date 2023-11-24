@@ -172,6 +172,8 @@ export default function Home() {
         >
           <h1 className="font-bold text-[50px]">MY NOSTR BLOG</h1>
           <NotesList />
+
+          {/* OLD */}
           <div className="w-[600px]">
             <div className="flex flex-col gap-[10px] border border-gray-800 bg-black/50 backdrop-blur-md p-[15px] rounded-[15px]">
               {/* Author */}
