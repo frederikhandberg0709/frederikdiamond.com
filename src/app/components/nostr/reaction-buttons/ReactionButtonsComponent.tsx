@@ -1,9 +1,9 @@
 "use client";
 
 import React, { ReactNode, useState } from "react";
-import { TooltipTop } from "./Tooltip";
+import { TooltipTop } from "../../Tooltip";
 
-interface PostActionButtonProps {
+interface ReactionButtonProps {
   tooltipText: string;
   count: number; // for the count number displayed next to the button
   children: ReactNode; // for the content inside the button like SVGs
@@ -11,7 +11,7 @@ interface PostActionButtonProps {
   bgColorOnActive: string; // background color on active
 }
 
-const PostActionButtonsComponent: React.FC<PostActionButtonProps> = ({
+const ReactionButtonsComponent: React.FC<ReactionButtonProps> = ({
   tooltipText,
   count,
   children,
@@ -69,4 +69,4 @@ const PostActionButtonsComponent: React.FC<PostActionButtonProps> = ({
   );
 };
 
-export default PostActionButtonsComponent;
+export default ReactionButtonsComponent;

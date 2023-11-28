@@ -67,7 +67,7 @@ export default class Contact extends React.Component<{}, State> {
         {/* Contact Form */}
         <div className="w-[500px]">
           <form
-            action="mailto:290750@via.dk"
+            action="mailto:unknownuser0709@protonmail.com"
             method="post"
             className="flex flex-col items-center gap-[20px] w-full"
           >

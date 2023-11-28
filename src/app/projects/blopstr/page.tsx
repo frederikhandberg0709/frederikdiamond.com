@@ -5,7 +5,6 @@ import Link from "next/link";
 import "../../components/gradients.css";
 import { DM_Serif_Display } from "next/font/google";
 import { useEffect, useState } from "react";
-import Footer from "@/app/components/Footer";
 import ProjectNav from "@/app/components/ProjectNav";
 
 const dmSerifDisplay = DM_Serif_Display({
@@ -14,8 +13,6 @@ const dmSerifDisplay = DM_Serif_Display({
 });
 
 export default function BLOPstr() {
-  const [contactVisibility, setContactVisibility] = useState<boolean>(false);
-
   return (
     <>
       {/* Navbar */}
@@ -106,9 +103,6 @@ export default function BLOPstr() {
         </div>
         <div className="header-gradient top-[0%] left-[20%]"></div>
       </main>
-
-      {/* Footer */}
-      <Footer contactVisibility={contactVisibility} />
     </>
   );
 }

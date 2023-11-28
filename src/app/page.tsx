@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar";
 import Image from "next/image";
 import Link from "next/link";
 import PostDropdownMenu from "./components/nostr/PostDropdownMenu";
-import PostActionButton from "./components/PostActionButton";
+import PostActionButtons from "./components/nostr/reaction-buttons/ReactionButtons";
 import "./components/gradients.css";
 import NotesList from "./components/nostr/NotesList";
 // import Noise from "../../public/noise.svg";
@@ -217,7 +217,7 @@ export default function Home() {
                 alt="Post image"
                 className="rounded-[10px]"
               />
-              <PostActionButton
+              <PostActionButtons
                 likeCount={3}
                 commentCount={7}
                 shareCount={5}

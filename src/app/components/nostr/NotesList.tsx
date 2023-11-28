@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { NostrProvider, useNostrEvents, useProfile } from "nostr-react";
 import PostDropdownMenu from "./PostDropdownMenu";
+import PostActionButton from "./reaction-buttons/ReactionButtons";
 
 const NotesList = () => {
   const relayUrls = ["wss://relay.primal.net", "wss://relay.damus.io"];
@@ -116,6 +117,13 @@ const ProfileFeed = () => {
                   />
                 ) : null;
               })()}
+              {/* Reaction buttons */}
+              {/* <PostActionButton
+                likeCount={event.like_count}
+                commentCount={event.comment_count}
+                shareCount={event.share_count}
+                zapCount={event.zap_count}
+              /> */}
             </div>
           </p>
         ))}

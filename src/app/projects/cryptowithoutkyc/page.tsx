@@ -3,7 +3,6 @@
 
 import { useState } from "react";
 import ProjectNav from "@/app/components/ProjectNav";
-import Footer from "@/app/components/Footer";
 import { DM_Serif_Display } from "next/font/google";
 
 const dmSerifDisplay = DM_Serif_Display({
@@ -12,8 +11,6 @@ const dmSerifDisplay = DM_Serif_Display({
 });
 
 export default function CryptoWithoutKyc() {
-  const [contactVisibility, setContactVisibility] = useState<boolean>(false);
-
   return (
     <>
       {/* Navbar */}
@@ -73,9 +70,6 @@ export default function CryptoWithoutKyc() {
         </div>
         <div className="header-gradient top-[0%] left-[20%]"></div>
       </main>
-
-      {/* Footer */}
-      <Footer contactVisibility={contactVisibility} />
     </>
   );
 }

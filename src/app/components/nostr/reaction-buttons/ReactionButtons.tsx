@@ -1,7 +1,7 @@
 import React from "react";
-import SinglePostActionButton from "./PostActionButtonsComponent";
+import SinglePostActionButton from "./ReactionButtonsComponent";
 
-type PostActionButtonProps = {
+type ReactionButtonsProps = {
   likeCount: number;
   commentCount: number;
   shareCount: number;
@@ -17,7 +17,7 @@ function formatCount(num: any) {
   return num; // Less than 1000
 }
 
-const PostActionButton: React.FC<PostActionButtonProps> = ({
+const ReactionButtons: React.FC<ReactionButtonsProps> = ({
   likeCount,
   commentCount,
   shareCount,
@@ -105,4 +105,4 @@ const PostActionButton: React.FC<PostActionButtonProps> = ({
   );
 };
 
-export default PostActionButton;
+export default ReactionButtons;
