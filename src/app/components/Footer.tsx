@@ -33,18 +33,6 @@ const Footer: React.FC<Props> = ({ contactVisibility }) => {
             </div>
             {/* Social Links */}
             <div className="flex gap-[40px] mt-[100px]">
-              {/* X / Twitter */}
-              <Link
-                href="https://x.com/frederikdiamond"
-                target="_blank"
-                className="rounded-full flex items-center justify-center hover:scale-150 transition-all duration-200 ease-in-out h-[60px] w-[60px]"
-              >
-                <Image
-                  src={Xlogo}
-                  alt="Twitter"
-                  className="h-[40px] w-[40px]"
-                />
-              </Link>
               {/* Nostr */}
               <Link
                 href="https://primal.net/p/npub1nj0crmtetu84a7j43yegy358mp8u0e4ye7ndkhtd8dg0edll4mpqn52gqz"
@@ -57,6 +45,18 @@ const Footer: React.FC<Props> = ({ contactVisibility }) => {
                   className="rounded-full hover:scale-150 transition-all duration-200 ease-in-out"
                 />
               </Link>
+              {/* X */}
+              <Link
+                href="https://x.com/frederikdiamond"
+                target="_blank"
+                className="rounded-full flex items-center justify-center hover:scale-150 transition-all duration-200 ease-in-out h-[60px] w-[60px]"
+              >
+                <Image
+                  src={Xlogo}
+                  alt="Twitter"
+                  className="h-[40px] w-[40px]"
+                />
+              </Link>
               {/* Instagram */}
               <Link
                 href="https://www.instagram.com/frederik_diamond/"
@@ -67,6 +67,19 @@ const Footer: React.FC<Props> = ({ contactVisibility }) => {
                   src={Instagram}
                   alt="Instagram"
                   className="rounded-full hover:scale-150 transition-all duration-200 ease-in-out"
+                />
+              </Link>
+              {/* Threads */}
+              <Link
+                href="https://www.threads.net/@frederik_diamond"
+                target="_blank"
+              >
+                <Image
+                  src="/threads-logo.svg"
+                  alt="Threads"
+                  width={60}
+                  height={60}
+                  className="hover:scale-150 transition-all duration-200 ease-in-out"
                 />
               </Link>
             </div>
