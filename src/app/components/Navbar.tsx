@@ -82,7 +82,7 @@ const Navbar: React.FC<NavbarProps> = ({
         className="navbar w-full flex flex-col justify-center items-center fixed top-0 left-0 right-0 z-50 bg-[rgba(0,0,0,0)] backdrop-blur-0"
         style={navbarStyle}
       >
-        <div className="flex justify-between w-[90%] mt-[15px] mb-[15px]">
+        <div className="flex justify-between w-[90%] min-[2000px]:w-[1500px] mt-[15px] mb-[15px]">
           {/* Brand */}
           <Link
             href="#home"
