@@ -51,7 +51,7 @@ export default function PostDropdownMenu() {
         </svg>
       </button>
       <div
-        className={`absolute z-50 mt-[10px] rounded-[10px] w-[200px] bg-black border border-darkPurple hover:border-selectedPurple transition ease-in-out duration-200 ${
+        className={`absolute z-20 mt-[10px] rounded-[10px] w-[200px] bg-black border border-darkPurple hover:border-selectedPurple transition ease-in-out duration-200 ${
           openPostDropdownMenu ? "block" : "hidden"
         }`}
       >
