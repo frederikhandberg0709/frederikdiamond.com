@@ -112,7 +112,7 @@ const ProfileFeed = () => {
                 return match ? (
                   <img
                     src={match[0]}
-                    alt="This is an image uploaded by the FREDERIK DIAMOND's profile."
+                    alt="This is an image uploaded by FREDERIK DIAMOND's profile."
                     className="rounded-[10px]"
                   />
                 ) : null;
