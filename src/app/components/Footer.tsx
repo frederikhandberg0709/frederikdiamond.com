@@ -10,10 +10,13 @@ import Instagram from "../../../public/instagram.svg";
 import Noise from "../../../public/noise.svg";
 import Contact from "./contact-form/Contact";
 import "./gradients.css";
+import { Montserrat } from "next/font/google";
 
 interface Props {
   contactVisibility: boolean;
 }
+
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 const Footer: React.FC<Props> = ({ contactVisibility }) => {
   return (
@@ -25,10 +28,19 @@ const Footer: React.FC<Props> = ({ contactVisibility }) => {
             {/* Contact */}
             <div
               className={
-                contactVisibility ? "flex flex-col items-center" : "hidden"
+                contactVisibility
+                  ? "flex flex-col items-center gap-[40px]"
+                  : "hidden"
               }
             >
-              <h1 className="text-[50px] font-bold mb-[50px]">CONTACT</h1>
+              <div className="flex items-center gap-[20px] relative">
+                <span className="font-black text-[25px] opacity-50 text-stroke-1 text-stroke-white text-fill-black absolute left-[-50px]">
+                  06
+                </span>
+                <h1 className={`font-bold text-[50px] ${montserrat}`}>
+                  CONTACT
+                </h1>
+              </div>
               <Contact />
             </div>
             {/* Social Links */}

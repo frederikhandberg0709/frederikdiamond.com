@@ -7,8 +7,8 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 export default function About() {
   return (
     <div>
-      <div className="flex items-center gap-[20px]">
-        <span className="font-black text-[25px] opacity-50 text-stroke-1 text-stroke-white text-fill-black">
+      <div className="flex items-center gap-[20px] relative">
+        <span className="font-black text-[25px] opacity-50 text-stroke-1 text-stroke-white text-fill-black absolute left-[-50px]">
           05
         </span>
         <h1 className={`font-bold text-[50px] ${montserrat}`}>ABOUT</h1>
@@ -83,45 +83,59 @@ export default function About() {
           <p className="text-[15px] opacity-75">
             My belief is that every software should be open-source and
             decentralized, at least when it makes sense for the product or
-            service. So, when does it make sense? Well, whenever trust and
-            anti-censorship is important, I think you should only use software
-            that is open-source and decentralized. Here are some examples of
-            services that I think should absolutely be open-source and
-            decentralized: a social media, crypto wallet or a
-            chatting/messaging-protocol. But why? Why is it so important for
-            these specific types of services to be open-source and
-            decentralized? Let{"'"}s start with a social-media platform. Why
-            should a social media platform be open-source and decentralized? In
-            the case of a social media, there are mainly one very important
-            reason: free speech. I suppose we have all heard of the mass banning
-            of people on the Big Tech platforms because the government and Big
-            Tech deemed their opinions as not allowed. When people are banned
-            for holding certain opinions, it{"'"}s censorship. It{"'"}s exactly
-            what totalitarian governments do. They ban opinions they deem as
-            being a threat to their establishment. A platform like Facebook can
-            easily ban users because the platform is entirely closed and Meta
-            controls EVERYTHING. On the contrary we have a decentralized
-            protocol. For instance, a protocol like Nostr. Banning a user from
-            the entire network of Nostr is practically impossible, since no
-            single entity controls the protocol. It is run and operated by the
-            people. This is what decentralized protocols are all about. The idea
-            is to delegate the power to everyone. Or at least, many more than
-            just one or very few entities. Another really cool thing about being
-            decentralized is that users can choose their own frontend clients -
-            coders can even build their own! You know, how on Instagram, you can
-            only use the official Instagram app. With a decentralized protocol
-            like Nostr, you can choose between many different or completely
-            build your own client from scratch. That{"'"}s because the protocol
-            is completely independent of any frontend. For a chatting/messaging
-            protocol, being censorship-resistant is certainly important. You
-            don’t want anyone to have the power to completely ban you from the
-            service. But privacy might be even more important, because you
-            definitely do not want anyone to read your private messages. I hope
-            that we will see a messaging protocol that is completely independent
-            of any specific app. A protocol that anyone can build upon and setup
-            their own relay (server) — maybe Nostr or something similar is the
-            future of private messaging just like it very much could be the
-            future of social media.
+            service.
+            <br />
+            <br />
+            <i>So, when does it make sense?</i>
+            <br />
+            Well, whenever trust and anti-censorship is important, I think you
+            should only use software that is open-source and decentralized. Here
+            are some examples of services that I think should absolutely be
+            open-source and decentralized: a social media, crypto wallet or a
+            chatting/messaging-protocol.
+            <br />
+            <i>But why?</i> Why is it so important for these specific types of
+            services to be open-source and decentralized? Let{"'"}s start with a
+            social-media platform. Why should a social media platform be
+            open-source and decentralized? In the case of a social media, there
+            are mainly one very important reason: free speech.
+            <br />
+            <br />I suppose we have all heard of the mass banning of people on
+            the Big Tech platforms because the government and Big Tech deemed
+            their opinions as not allowed. When people are banned for holding
+            certain opinions, it{"'"}s censorship. It{"'"}s exactly what
+            totalitarian governments do. They ban opinions they deem as being a
+            threat to their establishment.
+            <br />
+            <br />A platform like Facebook can easily ban users because the
+            platform is entirely closed and Meta controls EVERYTHING. On the
+            contrary we have a decentralized protocol. For instance, a protocol
+            like Nostr. Banning a user from the entire network of Nostr is
+            practically impossible, since no single entity controls the
+            protocol. It is run and operated by the people. This is what
+            decentralized protocols are all about. The idea is to delegate the
+            power to everyone. Or at least, many more than just one or very few
+            entities.
+            <br />
+            <br />
+            Another really cool thing about being decentralized is that users
+            can choose their own frontend clients — coders can even build their
+            own! You know, how on Instagram, you can only use the official
+            Instagram app. With a decentralized protocol like Nostr, you can
+            choose between many different or completely build your own client
+            from scratch. That{"'"}s because the protocol is completely
+            independent of any frontend.
+            <br />
+            <br />
+            For a chatting/messaging protocol, being censorship-resistant is
+            certainly important. You don’t want anyone to have the power to
+            completely ban you from the service. But privacy might be even more
+            important, because you definitely do not want anyone to read your
+            private messages. I hope that we will see a messaging protocol that
+            is completely independent of any specific app. A protocol that
+            anyone can build upon and setup their own relay (server) — maybe
+            Nostr or something similar is the future of private messaging just
+            like it very much could be the future of social media.
           </p>
         </div>
         <div className="flex flex-col gap-[15px]">
