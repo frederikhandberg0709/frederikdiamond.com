@@ -118,12 +118,12 @@ const Navbar: React.FC<NavbarProps> = ({
               HOME
             </Link>
             <Link
-              href="#projects"
+              href="#business"
               onClick={(e) => {
                 e.preventDefault();
-                handleNavLinkClick("projects");
+                handleNavLinkClick("business");
               }}
-              className={linkClass("projects")}
+              className={linkClass("business")}
             >
               BUSINESS
             </Link>
