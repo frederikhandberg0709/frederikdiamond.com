@@ -50,7 +50,7 @@ export default function About() {
       </p>
       <div className="relative my-[40px] h-[60px]">
         <h2
-          className={`text-[40px] font-black absolute z-10 text-black ${montserrat}`}
+          className={`text-[40px] font-black absolute z-10 text-black hover:text-white ${montserrat}`}
         >
           CYPHERPUNK. E/ACC.
         </h2>
@@ -63,7 +63,11 @@ export default function About() {
       <div className="flex flex-col gap-[40px]">
         <div className="flex flex-col gap-[15px]">
           <div
-            className="flex gap-[20px] cursor-pointer"
+            className={`flex gap-[20px] cursor-pointer transition duration-150 ease-in-out select-none ${
+              visibility.cypherpunkSection
+                ? "opacity-100"
+                : "opacity-50 hover:opacity-100"
+            }`}
             onClick={() => toggleVisibility("cypherpunkSection")}
           >
             <h3 className="font-semibold text-[20px]">Cypherpunk</h3>
@@ -113,7 +117,11 @@ export default function About() {
         </div>
         <div className="flex flex-col gap-[15px]">
           <div
-            className="flex gap-[20px] cursor-pointer"
+            className={`flex gap-[20px] cursor-pointer transition duration-150 ease-in-out select-none ${
+              visibility.opensourceAndDecentralizationSection
+                ? "opacity-100"
+                : "opacity-50 hover:opacity-100"
+            }`}
             onClick={() =>
               toggleVisibility("opensourceAndDecentralizationSection")
             }
@@ -201,7 +209,11 @@ export default function About() {
         </div>
         <div className="flex flex-col gap-[15px]">
           <div
-            className="flex gap-[20px] cursor-pointer"
+            className={`flex gap-[20px] cursor-pointer transition duration-150 ease-in-out select-none ${
+              visibility.moneyAndTheState
+                ? "opacity-100"
+                : "opacity-50 hover:opacity-100"
+            }`}
             onClick={() => toggleVisibility("moneyAndTheState")}
           >
             <h3 className="font-semibold text-[20px]">Money and the State</h3>
