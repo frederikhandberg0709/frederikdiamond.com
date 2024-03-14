@@ -24,24 +24,35 @@ export default function Business() {
         open-source whenever it makes sense for the product.
       </p>
       {/* Company Structure */}
-      <div>
-        <p className="font-bold text-[25px]">
-          ForwardFuture<span className="opacity-50">.xyz</span>
-        </p>
-        <div className="flex items-start">
-          <p
-            className={`group flex flex-col text-center leading-none font-[montserrat] ${montserrat.className}`}
-          >
-            <span className="text-[#4dacfe] text-[35px] font-[900] group-hover:drop-shadow-[0_0px_35px_rgba(79,172,254,0.99)] transition duration-300 ease-in-out">
-              HAPPY
-            </span>
-            <span className="text-[#fe5297] text-[35px] font-[900] group-hover:drop-shadow-[0_0px_35px_rgba(254,81,150,0.99)] transition duration-300 ease-in-out">
-              DIAMOND
-            </span>
-            <span className="font-semibold text-[13px] opacity-50 mt-[5px]">
-              BE DIFFERENT. BE UNIQUE.
-            </span>
+      <div className="flex flex-col items-center gap-[100px]">
+        <div className="flex flex-col items-center">
+          <p className="font-medium opacity-50">Holding Company</p>
+          <p className="font-bold text-[25px]">
+            ForwardFuture<span className="opacity-50">.xyz</span>
           </p>
+        </div>
+        <div className="flex gap-[50px]">
+          <div className="flex items-start">
+            <p
+              className={`group flex flex-col text-center leading-none font-[montserrat] ${montserrat.className}`}
+            >
+              <span className="text-[#4dacfe] text-[35px] font-[900] group-hover:drop-shadow-[0_0px_35px_rgba(79,172,254,0.99)] transition duration-300 ease-in-out">
+                HAPPY
+              </span>
+              <span className="text-[#fe5297] text-[35px] font-[900] group-hover:drop-shadow-[0_0px_35px_rgba(254,81,150,0.99)] transition duration-300 ease-in-out">
+                DIAMOND
+              </span>
+              <span className="font-semibold text-[13px] opacity-50 mt-[5px]">
+                BE DIFFERENT. BE UNIQUE.
+              </span>
+            </p>
+          </div>
+          <div>
+            <p className="text-[25px] font-bold">
+              BeyondBiology
+              <span className="opacity-50">.tech</span>
+            </p>
+          </div>
         </div>
       </div>
     </div>
