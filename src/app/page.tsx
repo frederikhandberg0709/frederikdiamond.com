@@ -12,6 +12,7 @@ import "./components/gradients.css";
 import NotesList from "./components/nostr/NotesList";
 import Business from "./sections/Business";
 import About from "./sections/About";
+import Inventory from "./sections/Inventory";
 // import Noise from "../../public/noise.svg";
 
 export default function Home() {
@@ -180,6 +181,16 @@ export default function Home() {
           >
             SHOW ALL
           </Link>
+        </div>
+      </div>
+      {/* Inventory Section */}
+      <div className="flex justify-center">
+        <div
+          id="inventory"
+          ref={inventoryRef}
+          className="flex flex-col items-start gap-[50px] w-[800px] py-[100px]"
+        >
+          <Inventory />
         </div>
       </div>
       {/* About Section */}
