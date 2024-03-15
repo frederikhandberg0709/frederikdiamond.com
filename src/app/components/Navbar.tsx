@@ -5,15 +5,19 @@ import React, { useState, useEffect } from "react";
 
 interface NavbarProps {
   homeRef: React.RefObject<HTMLElement>;
-  projectsRef: React.RefObject<HTMLElement>;
+  businessRef: React.RefObject<HTMLElement>;
   blogRef: React.RefObject<HTMLElement>;
+  inventoryRef: React.RefObject<HTMLElement>;
+  aboutRef: React.RefObject<HTMLElement>;
   contactRef: React.RefObject<HTMLElement>;
 }
 
 const Navbar: React.FC<NavbarProps> = ({
   homeRef,
-  projectsRef,
+  businessRef,
   blogRef,
+  inventoryRef,
+  aboutRef,
   contactRef,
 }) => {
   // Background opacity
@@ -36,8 +40,10 @@ const Navbar: React.FC<NavbarProps> = ({
       // Navbar active section
       const sections = [
         { id: "home", ref: homeRef },
-        { id: "projects", ref: projectsRef },
+        { id: "business", ref: businessRef },
         { id: "blog", ref: blogRef },
+        { id: "inventory", ref: inventoryRef },
+        { id: "about", ref: aboutRef },
         { id: "contact", ref: contactRef },
       ];
 
@@ -55,7 +61,7 @@ const Navbar: React.FC<NavbarProps> = ({
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [homeRef, projectsRef, blogRef, contactRef]);
+  }, [homeRef, businessRef, blogRef, inventoryRef, aboutRef, contactRef]);
 
   const handleNavLinkClick = (sectionId: string) => {
     const section = document.getElementById(sectionId);
@@ -112,14 +118,14 @@ const Navbar: React.FC<NavbarProps> = ({
               HOME
             </Link>
             <Link
-              href="#projects"
+              href="#business"
               onClick={(e) => {
                 e.preventDefault();
-                handleNavLinkClick("projects");
+                handleNavLinkClick("business");
               }}
-              className={linkClass("projects")}
+              className={linkClass("business")}
             >
-              PROJECTS
+              BUSINESS
             </Link>
             <Link
               href="#blog"
@@ -130,6 +136,16 @@ const Navbar: React.FC<NavbarProps> = ({
               className={linkClass("blog")}
             >
               BLOG
+            </Link>
+            <Link
+              href="#inventory"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavLinkClick("inventory");
+              }}
+              className={linkClass("inventory")}
+            >
+              INVENTORY
             </Link>
             <Link
               href="#about"

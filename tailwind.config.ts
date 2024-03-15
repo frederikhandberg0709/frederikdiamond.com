@@ -35,7 +35,24 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
+    textFillColor: (theme: any) => theme("borderColor"),
+    textStrokeColor: (theme: any) => theme("borderColor"),
+    textStrokeWidth: (theme: any) => theme("borderWidth"),
+    paintOrder: {
+      fsm: { paintOrder: "fill stroke markers" },
+      fms: { paintOrder: "fill markers stroke" },
+      sfm: { paintOrder: "stroke fill markers" },
+      smf: { paintOrder: "stroke markers fill" },
+      mfs: { paintOrder: "markers fill stroke" },
+      msf: { paintOrder: "markers stroke fill" },
+    },
   },
-  plugins: [],
+  variants: {
+    textFillColor: ["responsive"],
+    textStrokeColor: ["responsive"],
+    textStrokeWidth: ["responsive"],
+    paintOrder: ["responsive"],
+  },
+  plugins: [require("tailwindcss-text-fill-stroke")()],
 };
 export default config;

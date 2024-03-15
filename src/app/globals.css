@@ -26,3 +26,7 @@ body {
     rgb(var(--background-start-rgb));
   overflow-x: hidden;
 }
+
+.text-stroke-1 {
+  -webkit-text-stroke: 1px;
+}

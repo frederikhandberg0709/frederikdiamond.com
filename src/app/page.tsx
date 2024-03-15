@@ -10,12 +10,17 @@ import PostDropdownMenu from "./components/nostr/PostDropdownMenu";
 import PostActionButtons from "./components/nostr/reaction-buttons/ReactionButtons";
 import "./components/gradients.css";
 import NotesList from "./components/nostr/NotesList";
+import Business from "./sections/Business";
+import About from "./sections/About";
+import Inventory from "./sections/Inventory";
 // import Noise from "../../public/noise.svg";
 
 export default function Home() {
   const homeRef = useRef<HTMLDivElement>(null);
-  const projectsRef = useRef<HTMLDivElement>(null);
+  const businessRef = useRef<HTMLDivElement>(null);
   const blogRef = useRef<HTMLDivElement>(null);
+  const inventoryRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
   const [contactVisibility, setContactVisibility] = useState<boolean>(true);
@@ -24,8 +29,10 @@ export default function Home() {
     <main>
       <Navbar
         homeRef={homeRef}
-        projectsRef={projectsRef}
+        businessRef={businessRef}
         blogRef={blogRef}
+        inventoryRef={inventoryRef}
+        aboutRef={aboutRef}
         contactRef={contactRef}
       />
       <div ref={homeRef} id="home" className="relative w-full">
@@ -47,13 +54,22 @@ export default function Home() {
         /> */}
         <div className="flex justify-center py-[200px] w-full z-10">
           <div className="flex w-[90%] flex-col md:flex-row md:max-w-[800px] md:justify-center gap-[50px]">
-            <h1 className="font-montserrat text-[50px] font-black leading-[70px]">
-              PRIVACY.
-              <br />
-              FREEDOM.
-              <br />
-              ANONYMITY.
-            </h1>
+            <div>
+              <div className="flex items-center gap-[20px] relative">
+                <span className="font-black text-[25px] opacity-50 text-stroke-1 text-stroke-white text-fill-black absolute left-[-50px]">
+                  01
+                </span>
+                <h1 className="font-montserrat text-[50px] font-black leading-[70px]">
+                  PRIVACY.
+                </h1>
+              </div>
+
+              <h1 className="font-montserrat text-[50px] font-black leading-[70px]">
+                FREEDOM.
+                <br />
+                ANONYMITY.
+              </h1>
+            </div>
             <div className="flex flex-col gap-[15px] mt-[50px] text-[16px]">
               <p className="font-semibold">
                 I believe privacy is a human right.
@@ -82,85 +98,14 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* My Projects */}
+      {/* Business Section */}
       <div className="flex justify-center">
         <div
-          id="projects"
-          ref={projectsRef}
-          className="flex flex-col items-center gap-[50px] pb-[100px] w-[90%] md:max-w-[800px]"
+          id="business"
+          ref={businessRef}
+          className="flex flex-col items-center gap-[50px] pb-[100px] w-[90%] md:max-w-[800px] py-[100px]"
         >
-          <h1 className="font-bold text-[50px] mt-[100px]">MY PROJECTS</h1>
-          <div className="flex flex-col gap-[150px]">
-            <div className="flex flex-col gap-[50px]">
-              <div className="flex flex-col items-start">
-                <h2 className="text-[35px] font-bold">BLOPstr!</h2>
-                <p className="text-[15px] opacity-50 mt-[10px]">
-                  BLOPstr is a beautiful and easy-to-use social media built on
-                  the open-protocol called Nostr.
-                  <br />
-                  Nostr is a decentralized global communications protocol that
-                  truly enables freedom and anti-censorship. Nostr has many
-                  great use-cases, like building marketplaces, messaging apps,
-                  social medias, and much more!
-                </p>
-                <div className="flex items-center gap-[30px] mt-[20px]">
-                  <Link
-                    href="blopstr.com"
-                    className="bg-blue-500 font-semibold text-[15px] px-[20px] py-[12px] rounded-md cursor-pointer relative bottom-0 hover:drop-shadow-[0_10px_30px_rgba(59,130,246,0.75)] hover:bottom-[5px] transition-all ease-in-out"
-                  >
-                    VISIT
-                  </Link>
-                  <Link
-                    href="/projects/blopstr"
-                    className="text-[15px] text-white font-semibold hover:text-blue-500 hover:underline underline-offset-4"
-                  >
-                    Read more
-                  </Link>
-                </div>
-              </div>
-              {/* Image of project */}
-              <div className="rounded-[15px] h-[500px] w-full relative bottom-0 hover:bottom-[10px] ease-in-out duration-300">
-                <img
-                  src="https://media.primal.net/uploads/b/ee/d1/beed1c36b09b892871d9d0e9566dc7a0556077a38253608fc89c57b455ab35aa.png"
-                  alt="Blopstr Preview"
-                  className="object-cover rounded-[15px]"
-                />
-              </div>
-            </div>
-            <div className="flex flex-col gap-[50px]">
-              <div className="flex flex-col items-start">
-                <h2 className="text-[35px] font-bold">CRYPTOWITHOUTKYC</h2>
-                <p className="text-[15px] opacity-50 mt-[10px]">
-                  An open-source, decentralized, and peer-to-peer crypto trading
-                  platform where users can buy and sell bitcoin and monero
-                  without any KYC-verification. The platform is running on the
-                  Nostr protocol using NIP-15 (the Nostr marketplace).
-                </p>
-                <div className="flex items-center gap-[30px] mt-[20px]">
-                  <Link
-                    href="cryptowithoutkyc.com"
-                    className="bg-blue-500 font-semibold text-[15px] px-[20px] py-[12px] rounded-md cursor-pointer relative bottom-0 hover:drop-shadow-[0_10px_30px_rgba(59,130,246,0.75)] hover:bottom-[5px] transition-all ease-in-out"
-                  >
-                    VISIT
-                  </Link>
-                  <Link
-                    href="/projects/cryptowithoutkyc"
-                    className="text-[15px] text-white font-semibold hover:text-blue-500 hover:underline underline-offset-4"
-                  >
-                    Read more
-                  </Link>
-                </div>
-              </div>
-              {/* Image of project */}
-              <div className="rounded-[15px] h-[500px] w-full relative bottom-0 hover:bottom-[10px] ease-in-out duration-300">
-                <img
-                  src="https://imgproxy.iris.to/insecure/plain/https://image.nostr.build/07270fb2796c41f0168f5940cc6de38a6b5472fc1879683c7ebd31de8e46ebc9.png"
-                  alt="Blopstr Preview"
-                  className="object-cover rounded-[15px]"
-                />
-              </div>
-            </div>
-          </div>
+          <Business />
         </div>
       </div>
       {/* My Nostr Timeline */}
@@ -170,7 +115,12 @@ export default function Home() {
           ref={blogRef}
           className="flex flex-col items-center gap-[50px] w-[800px] py-[100px]"
         >
-          <h1 className="font-bold text-[50px]">MY NOSTR BLOG</h1>
+          <div className="flex items-center gap-[20px] relative">
+            <span className="font-black text-[25px] opacity-50 text-stroke-1 text-stroke-white text-fill-black absolute left-[-50px]">
+              03
+            </span>
+            <h1 className="font-bold text-[50px]">MY NOSTR BLOG</h1>
+          </div>
           <NotesList />
 
           {/* OLD */}
@@ -233,6 +183,27 @@ export default function Home() {
           </Link>
         </div>
       </div>
+      {/* Inventory Section */}
+      <div className="flex justify-center">
+        <div
+          id="inventory"
+          ref={inventoryRef}
+          className="flex flex-col items-start gap-[50px] w-[800px] py-[100px]"
+        >
+          <Inventory />
+        </div>
+      </div>
+      {/* About Section */}
+      <div className="flex justify-center">
+        <div
+          id="about"
+          ref={aboutRef}
+          className="flex flex-col items-center gap-[50px] pb-[100px] w-[90%] md:max-w-[800px] py-[100px]"
+        >
+          <About />
+        </div>
+      </div>
+      {/* Contact Section */}
       <div ref={contactRef}>
         <Footer contactVisibility={contactVisibility} />
       </div>
