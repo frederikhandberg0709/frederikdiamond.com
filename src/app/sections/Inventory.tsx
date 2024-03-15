@@ -15,6 +15,9 @@ export default function Inventory() {
         <br />
         I’ve made this catalogue that includes almost every item I own.
       </p>
+      <p className="text-warning font-semibold mt-[20px]">
+        🚧 THIS SECTION IS CURRENTLY UNDER CONSTRUCTION 🚧
+      </p>
     </div>
   );
 }

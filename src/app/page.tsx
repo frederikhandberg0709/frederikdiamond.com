@@ -103,7 +103,7 @@ export default function Home() {
         <div
           id="business"
           ref={businessRef}
-          className="flex flex-col items-center gap-[50px] pb-[100px] w-[90%] md:max-w-[800px]"
+          className="flex flex-col items-center gap-[50px] pb-[100px] w-[90%] md:max-w-[800px] py-[100px]"
         >
           <Business />
         </div>
@@ -115,8 +115,8 @@ export default function Home() {
           ref={blogRef}
           className="flex flex-col items-center gap-[50px] w-[800px] py-[100px]"
         >
-          <div className="flex items-center gap-[20px]">
-            <span className="font-black text-[25px] opacity-50 text-stroke-1 text-stroke-white text-fill-black">
+          <div className="flex items-center gap-[20px] relative">
+            <span className="font-black text-[25px] opacity-50 text-stroke-1 text-stroke-white text-fill-black absolute left-[-50px]">
               03
             </span>
             <h1 className="font-bold text-[50px]">MY NOSTR BLOG</h1>
@@ -198,7 +198,7 @@ export default function Home() {
         <div
           id="about"
           ref={aboutRef}
-          className="flex flex-col items-center gap-[50px] pb-[100px] w-[90%] md:max-w-[800px]"
+          className="flex flex-col items-center gap-[50px] pb-[100px] w-[90%] md:max-w-[800px] py-[100px]"
         >
           <About />
         </div>
