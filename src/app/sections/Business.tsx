@@ -1,4 +1,5 @@
 import { Montserrat } from "next/font/google";
+import Link from "next/link";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -39,20 +40,26 @@ export default function Business() {
         anonymity, and decentralization.
       </p>
       <p className="mt-[20px]">
-        <b>BeyondBiology</b> TEXT COMING SOON!
+        <b>BeyondBiology</b> is combining artificial intelligence (AI) with
+        biotechnology to develop chemical fertilizers aimed at enhancing the
+        growth rates of agricultural plants.
       </p>
       {/* Company Structure */}
       <div className="flex flex-col items-center gap-[100px] mt-[50px]">
         <div className="flex flex-col items-center">
           <p className="font-medium opacity-50">Holding Company</p>
-          <p className="font-bold text-[25px]">
+          <Link
+            href="https://forwardfuture.xyz"
+            className="font-bold text-[25px]"
+          >
             ForwardFuture<span className="opacity-50">.xyz</span>
-          </p>
+          </Link>
         </div>
         <div className="flex gap-[100px]">
           <div className="flex flex-col items-center gap-[5px]">
             <p className="font-medium opacity-50">Consumer Technology</p>
-            <p
+            <Link
+              href="https://happydiamond.tech"
               className={`group flex flex-col text-center leading-none font-[montserrat] ${montserrat.className}`}
             >
               <span className="text-[#4dacfe] text-[35px] font-[900] group-hover:drop-shadow-[0_0px_35px_rgba(79,172,254,0.99)] transition duration-300 ease-in-out">
@@ -64,14 +71,20 @@ export default function Business() {
               <span className="font-semibold text-[13px] opacity-50 mt-[5px]">
                 BE DIFFERENT. BE UNIQUE.
               </span>
-            </p>
+            </Link>
+            {/* <p className="opacity-50 font-medium mt-[20px]">
+              HAPPYDIAMOND.tech
+            </p> */}
           </div>
           <div className="flex flex-col items-center">
             <p className="font-medium opacity-50">Biotechnology</p>
-            <p className="text-[25px] font-bold">
+            <Link
+              href="https://beyondbiology.tech"
+              className="text-[25px] font-bold"
+            >
               BeyondBiology
               <span className="opacity-50">.tech</span>
-            </p>
+            </Link>
           </div>
         </div>
       </div>
