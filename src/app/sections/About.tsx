@@ -9,6 +9,7 @@ type VisibilityState = {
   cypherpunkSection: boolean;
   opensourceAndDecentralizationSection: boolean;
   moneyAndTheState: boolean;
+  effectiveAccelerationism: boolean;
 };
 
 export default function About() {
@@ -16,6 +17,7 @@ export default function About() {
     cypherpunkSection: false,
     opensourceAndDecentralizationSection: false,
     moneyAndTheState: false,
+    effectiveAccelerationism: false,
   });
 
   const toggleVisibility = (section: keyof VisibilityState) => {
@@ -261,6 +263,51 @@ export default function About() {
               the strong community behind it. Monero is getting updated quite
               frequently in order to stay up-to-date with cutting-edge privacy
               features.
+            </p>
+          </div>
+        </div>
+        <div className="flex flex-col gap-[15px]">
+          <div
+            className={`flex gap-[20px] cursor-pointer transition duration-150 ease-in-out select-none ${
+              visibility.effectiveAccelerationism
+                ? "opacity-100"
+                : "opacity-50 hover:opacity-100"
+            }`}
+            onClick={() => toggleVisibility("effectiveAccelerationism")}
+          >
+            <h3 className="font-semibold text-[20px]">
+              Effective Accelerationism
+            </h3>
+            <Image
+              src={ArrowIcon}
+              alt="Arrow"
+              height={11}
+              className={`${
+                visibility.effectiveAccelerationism ? "rotate-180" : ""
+              } transform transition-transform duration-300 ease-in-out`}
+            />
+          </div>
+          <div
+            className={`transition-all duration-500 ease-in-out overflow-hidden ${
+              visibility.effectiveAccelerationism
+                ? "max-h-[500px] opacity-100"
+                : "max-h-0 opacity-0"
+            }`}
+          >
+            <p className="text-[15px]">
+              I believe technological growth improves the world.
+              <br />
+              <br />
+              Basically, I am pro-technology, advocating for the rapid
+              advancement of innovation as a means to solve our most pressing
+              challenges. By accelerating technological development, we can
+              revolutionize healthcare, address environmental issues, enhance
+              human capabilities, and so much more. Effective accelerationism is
+              not about reckless progress; it{"'"}s about harnessing technology
+              thoughtfully and ethically to push humanity forward.
+              <br />
+              <br />
+              Ultimately, being pro-technology means being pro-humanity.
             </p>
           </div>
         </div>

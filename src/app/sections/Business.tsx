@@ -14,14 +14,32 @@ export default function Business() {
         </h1>
       </div>
       <p>
-        I am working on a company called ForwardFuture 🚀
+        I am working on a company called <b>ForwardFuture</b> 🚀
         <br />
         <br />
-        The primary mission of this company is to develop innovative products
-        that are not only cool but also fundamentally aimed at accelerating the
-        future. Privacy and freedom are incredibly important values for the
-        company and for myself personally. I believe in decentralization and
-        open-source whenever it makes sense for the product.
+        <b>ForwardFuture</b> is a holding company that manages two sister
+        companies, each working in their respective fields. The whole point of{" "}
+        <b>ForwardFuture</b> is to accelerate the future through technological
+        growth and advancement.
+      </p>
+      <p className="mt-[20px]">
+        <b>HAPPYDIAMOND</b> is laser-focused on developing user-friendly
+        consumer technology products designed to simplify and enhance daily
+        life. While innovation drives all <b>HAPPYDIAMOND</b>
+        {"'"}s products, the company and I place a particular emphasis on
+        open-source and decentralization for those where user privacy and trust
+        is essential and must not be compromised.
+        <br />
+        Trust cannot exist without transparency, which is why open-source is
+        indispensable for certain products where trust is essential.
+        <br />
+        <br />
+        The mission is to move the world toward a cypherpunk utopia by
+        developing technology that greatly respects user privacy, freedom,
+        anonymity, and decentralization.
+      </p>
+      <p className="mt-[20px]">
+        <b>BeyondBiology</b> TEXT COMING SOON!
       </p>
       {/* Company Structure */}
       <div className="flex flex-col items-center gap-[100px] mt-[50px]">
