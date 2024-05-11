@@ -41,8 +41,8 @@ export default function About() {
         {"'"}m currently studying for a degree in Software Engineering, so that
         doesn{"'"}t leave me much time. But any chance I get, I{"'"}m working
         hard on making my dreams come true. Except, of course, when I{"'"}m
-        hitting the trails on my dirt bike or capturing moments as a freelance
-        news photographer.
+        hitting the trails on my dirt bike, building drones, or capturing
+        moments as a freelance news photographer.
         <br />
         <br />I am a big proponent of open-source software, crypto (mainly
         Monero), privacy, freedom, anonymity, and decentralized protocols (for
