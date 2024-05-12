@@ -61,6 +61,11 @@ const ProfileFeed = () => {
 
   const maxElements = 5;
 
+  const hideMediaLinks = (content: string) => {
+    const regex = /https:\/\/.*\.(jpg|png|mp4|avi)/gi;
+    return content.replace(regex, "");
+  };
+
   return (
     <>
       <div className="flex flex-col gap-[20px] items-center">
@@ -103,7 +108,7 @@ const ProfileFeed = () => {
               </div>
               {/* Text content */}
               <p className="text-[15px] leading-normal overflow-x-hidden">
-                {event.content}
+                {hideMediaLinks(event.content)}
               </p>
               {/* Image */}
               {(() => {
@@ -114,6 +119,21 @@ const ProfileFeed = () => {
                     src={match[0]}
                     alt="This is an image uploaded by FREDERIK DIAMOND's profile."
                     className="rounded-[10px]"
+                  />
+                ) : null;
+              })()}
+              {/* Video */}
+              {(() => {
+                const regex = /https:\/\/.*\.(mp4|avi|mov)/;
+                const match = event.content.match(regex);
+                return match ? (
+                  <video
+                    src={match[0]}
+                    className="rounded-[10px]"
+                    width="100%"
+                    controls
+                    autoPlay
+                    muted
                   />
                 ) : null;
               })()}
