@@ -66,7 +66,7 @@ const ProfileFeed = () => {
       <div className="flex flex-col gap-[20px] items-center">
         {events.slice(0, maxElements).map((event) => (
           <p key={event.id}>
-            <div className="flex flex-col gap-[10px] w-[600px] border border-gray-900 hover:border-gray-800 transition duration-200 bg-black/50 backdrop-blur-md p-[15px] rounded-[15px]">
+            <div className="flex flex-col gap-[10px] w-[600px] border border-gray-900 hover:border-gray-800 transition duration-200 bg-black p-[15px] rounded-[15px]">
               {/* Author */}
               <div className="flex items-center justify-between">
                 <Link
@@ -112,7 +112,7 @@ const ProfileFeed = () => {
                 return match ? (
                   <img
                     src={match[0]}
-                    alt="This is an image uploaded by the FREDERIK DIAMOND's profile."
+                    alt="This is an image uploaded by FREDERIK DIAMOND's profile."
                     className="rounded-[10px]"
                   />
                 ) : null;

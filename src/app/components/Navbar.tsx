@@ -49,11 +49,13 @@ const Navbar: React.FC<NavbarProps> = ({
 
       const currentSection = sections.find((section) => {
         const element = section.ref.current;
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 0 && rect.bottom > 0;
-        }
-        return false;
+        if (!element) return false;
+
+        const { top, bottom } = element.getBoundingClientRect();
+        const isInView =
+          top + window.pageYOffset < window.scrollY + 5 &&
+          bottom + window.pageYOffset > window.scrollY + 5;
+        return isInView;
       });
 
       setActiveSection(currentSection ? currentSection.id : "");
@@ -66,7 +68,11 @@ const Navbar: React.FC<NavbarProps> = ({
   const handleNavLinkClick = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      const yOffset = 5; // Scroll down an additional 5px
+      const y =
+        section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
