@@ -3,6 +3,7 @@ import Link from "next/link";
 import { NostrProvider, useNostrEvents, useProfile } from "nostr-react";
 import PostDropdownMenu from "./PostDropdownMenu";
 import PostActionButton from "./reaction-buttons/ReactionButtons";
+import styleHashtags from "../highlightHashtags";
 
 const NotesList = () => {
   const relayUrls = ["wss://relay.primal.net", "wss://relay.damus.io"];
@@ -88,7 +89,7 @@ const ProfileFeed = () => {
                   />
                   <div className="flex flex-col gap-[1px]">
                     {/* Profile name */}
-                    <p className="font-bold text-[13px] group-hover:text-[#8E30EB]">
+                    <p className="font-bold text-[13px] group-hover:text-blue-500">
                       {userData?.display_name}
                     </p>
                     {/* Username */}
@@ -108,7 +109,8 @@ const ProfileFeed = () => {
               </div>
               {/* Text content */}
               <p className="text-[15px] leading-normal overflow-x-hidden">
-                {hideMediaLinks(event.content)}
+                {/* {hideMediaLinks(event.content)} */}
+                {styleHashtags(hideMediaLinks(event.content))}
               </p>
               {/* Image */}
               {(() => {

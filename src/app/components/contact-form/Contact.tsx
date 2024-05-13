@@ -67,7 +67,7 @@ export default class Contact extends React.Component<{}, State> {
         {/* Contact Form */}
         <div className="w-[500px]">
           <form
-            action="mailto:unknownuser0709@protonmail.com"
+            action="mailto:hello@frederikdiamond.com"
             method="post"
             className="flex flex-col items-center gap-[20px] w-full"
           >
@@ -142,8 +142,8 @@ export default class Contact extends React.Component<{}, State> {
             <div>
               <p className="text-white/40">Email address</p>
               <ButtonMailto
-                label="unknownuser0709@proton.me"
-                mailto="mailto:unknownuser0709@proton.me"
+                label="hello@frederikdiamond.com"
+                mailto="mailto:hello@frederikdiamond.com"
               />
             </div>
           </div>
