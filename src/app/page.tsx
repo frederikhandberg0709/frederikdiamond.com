@@ -144,9 +144,10 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-[15px] leading-normal">
-                Lorem ipsum dolor sit amet consectetur. Pellentesque nulla
-                libero neque sapien facilisi tincidunt proin. Convallis turpis a
-                in nec nisl hendrerit volutpat sit vestibulum.
+                This is a dummy post.
+                <br />
+                Working on adding the action buttons for like, comment, share,
+                and zaps for the posts.
               </p>
               <img
                 src="https://images.pexels.com/photos/1797121/pexels-photo-1797121.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"

@@ -41,6 +41,17 @@ const Footer: React.FC<Props> = ({ contactVisibility }) => {
                   CONTACT
                 </h1>
               </div>
+              <p className="text-gray-400 text-center">
+                The contact form below is not functional yet.
+                <br />
+                Please send an email directly to{" "}
+                <Link
+                  href="mailto:hello@frederikdiamond.com"
+                  className="font-semibold text-blue-500 hover:underline"
+                >
+                  hello@frederikdiamond.com
+                </Link>
+              </p>
               <Contact />
             </div>
             {/* Social Links */}
