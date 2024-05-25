@@ -1,4 +1,4 @@
-export default function Home() {
+export default function HomeSection() {
   return (
     <div>
       <div className="flex justify-center py-[200px] w-full z-10">

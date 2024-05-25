@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Header() {
+export default function HeaderSection() {
   const [hovered, setHovered] = useState<string | null>(null);
 
   const handleMouseEnter = (id: string) => () => {

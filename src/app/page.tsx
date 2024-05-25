@@ -1,19 +1,16 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import Image from "next/image";
 import Link from "next/link";
-import PostDropdownMenu from "./components/nostr/PostDropdownMenu";
-import PostActionButtons from "./components/nostr/reaction-buttons/ReactionButtons";
 import "./components/gradients.css";
-import NotesList from "./components/nostr/NotesList";
-import Business from "./sections/Business";
-import About from "./sections/About";
-import Inventory from "./sections/Inventory";
-import Header from "./sections/Header";
+import HeaderSection from "./sections/HeaderSection";
+import InventorySection from "./sections/InventorySection";
+import AboutSection from "./sections/AboutSection";
+import BlogSection from "./sections/BlogSection";
+import BusinessSection from "./sections/BusinessSection";
 // import Noise from "../../public/noise.svg";
 
 export default function Home() {
@@ -37,7 +34,7 @@ export default function Home() {
         contactRef={contactRef}
       />
       <div ref={homeRef} id="home" className="relative w-full">
-        <Header />
+        <HeaderSection />
         <div className="flex justify-center py-[200px] w-full z-10">
           <div className="flex w-[90%] flex-col md:flex-row md:max-w-[800px] md:justify-center gap-[50px]">
             <div>
@@ -91,7 +88,7 @@ export default function Home() {
           ref={businessRef}
           className="flex flex-col items-center gap-[50px] pb-[100px] w-[90%] md:max-w-[800px] py-[100px]"
         >
-          <Business />
+          <BusinessSection />
         </div>
       </div>
       {/* My Nostr Timeline */}
@@ -101,73 +98,34 @@ export default function Home() {
           ref={blogRef}
           className="flex flex-col items-center gap-[50px] w-[800px] py-[100px]"
         >
-          <div className="flex items-center gap-[20px] relative">
-            <span className="font-black text-[25px] opacity-50 text-stroke-1 text-stroke-white text-fill-black absolute left-[-50px]">
-              03
-            </span>
-            <h1 className="font-bold text-[50px]">MY NOSTR BLOG</h1>
-          </div>
-          <NotesList />
-
-          {/* OLD */}
-          <div className="w-[600px]">
-            <div className="flex flex-col gap-[10px] border border-gray-800 bg-black/50 backdrop-blur-md p-[15px] rounded-[15px]">
-              {/* Author */}
-              <div className="flex items-center justify-between">
-                <Link href="/profile" className="flex gap-[10px] group">
-                  <Image
-                    src="/fd-profile-pic.jpg"
-                    alt="Frederik Diamond"
-                    width={40}
-                    height={40}
-                    // src={item.author.profilePicture}
-                    // alt={item.author.profileName}
-                    className="rounded-full h-[40px] w-[40px] object-cover"
-                  />
-                  <div className="flex flex-col gap-[1px]">
-                    <p className="font-bold text-[13px] group-hover:text-[#8E30EB]">
-                      {/* {item.author.profileName} */}
-                      FREDERIK DIAMOND
-                    </p>
-                    <p className="text-[13px] text-gray-500">
-                      {/* @{item.author.username} */}
-                      @frederikdiamond
-                    </p>
-                  </div>
-                </Link>
-                <div className="flex items-center gap-[15px]">
-                  {/* Time ago posted */}
-                  <p className="text-[15px] text-right text-textGray">
-                    {/* {item.author.timeAgo} */}3 min ago
-                  </p>
-                  <PostDropdownMenu />
-                </div>
-              </div>
-              <p className="text-[15px] leading-normal">
-                This is a dummy post.
-                <br />
-                Working on adding the action buttons for like, comment, share,
-                and zaps for the posts.
-              </p>
-              <img
-                src="https://images.pexels.com/photos/1797121/pexels-photo-1797121.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                alt="Post image"
-                className="rounded-[10px]"
-              />
-              <PostActionButtons
-                likeCount={3}
-                commentCount={7}
-                shareCount={5}
-                zapCount={21}
-              />
+          <div className="flex flex-col items-center">
+            <div className="flex items-center gap-[20px] relative">
+              <span className="font-black text-[25px] opacity-50 text-stroke-1 text-stroke-white text-fill-black absolute left-[-50px]">
+                03
+              </span>
+              <h1 className="font-bold text-[50px]">MY NOSTR BLOG</h1>
             </div>
+            <p className="text-center text-[15px] opacity-75">
+              On my Nostr blog, I write about the topics I{"’"}m passionate
+              about.
+              <br />
+              These primarily include business, technology, Monero, privacy,
+              freedom, e/acc, and capitalism.
+              <br />I also share the pictures and videos I capture as a news
+              photographer.
+            </p>
+            <p className="mt-[15px] text-[16px]">
+              Visit{" "}
+              <Link
+                href="frederikdiamond.com/blog"
+                className="font-semibold text-blue-400 hover:text-blue-500 hover:underline transition ease-in-out duration-150"
+              >
+                frederikdiamond.com/blog
+              </Link>{" "}
+              to see all my posts and articles.
+            </p>
           </div>
-          <Link
-            href="https://primal.net/p/npub1nj0crmtetu84a7j43yegy358mp8u0e4ye7ndkhtd8dg0edll4mpqn52gqz"
-            className="bg-blue-500 font-semibold text-[15px] px-[20px] py-[12px] rounded-md cursor-pointer mt-[10px] relative bottom-0 hover:drop-shadow-[0_10px_30px_rgba(59,130,246,0.75)] hover:bottom-[5px] transition-all ease-in-out"
-          >
-            SHOW ALL
-          </Link>
+          <BlogSection />
         </div>
       </div>
       {/* Inventory Section */}
@@ -177,7 +135,7 @@ export default function Home() {
           ref={inventoryRef}
           className="flex flex-col items-start gap-[50px] w-[800px] py-[100px]"
         >
-          <Inventory />
+          <InventorySection />
         </div>
       </div>
       {/* About Section */}
@@ -187,7 +145,7 @@ export default function Home() {
           ref={aboutRef}
           className="flex flex-col items-center gap-[50px] pb-[100px] w-[90%] md:max-w-[800px] py-[100px]"
         >
-          <About />
+          <AboutSection />
         </div>
       </div>
       {/* Contact Section */}

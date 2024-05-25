@@ -47,7 +47,7 @@ const Footer: React.FC<Props> = ({ contactVisibility }) => {
                 Please send an email directly to{" "}
                 <Link
                   href="mailto:hello@frederikdiamond.com"
-                  className="font-semibold text-blue-500 hover:underline"
+                  className="font-semibold text-blue-400 hover:text-blue-500 hover:underline transition ease-in-out duration-150"
                 >
                   hello@frederikdiamond.com
                 </Link>

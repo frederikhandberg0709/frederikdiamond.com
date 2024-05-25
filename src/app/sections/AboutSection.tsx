@@ -12,7 +12,7 @@ type VisibilityState = {
   effectiveAccelerationism: boolean;
 };
 
-export default function About() {
+export default function AboutSection() {
   const [visibility, setVisibility] = useState<VisibilityState>({
     cypherpunkSection: false,
     opensourceAndDecentralizationSection: false,

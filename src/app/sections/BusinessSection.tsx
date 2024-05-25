@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
-export default function Business() {
+export default function BusinessSection() {
   return (
     <div>
       <div className="flex items-center gap-[20px] relative">

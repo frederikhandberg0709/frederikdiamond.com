@@ -1,4 +1,4 @@
-export default function Inventory() {
+export default function InventorySection() {
   return (
     <div>
       <div className="flex items-center gap-[20px] relative">
