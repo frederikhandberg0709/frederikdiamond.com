@@ -112,7 +112,7 @@ const Navbar: React.FC<NavbarProps> = ({
             </p>
           </Link>
           {/* Desktop Menu */}
-          <div className=" hidden sm:flex items-center">
+          <div className="hidden min-[690px]:flex items-center">
             <Link
               href="#home"
               onClick={(e) => {
@@ -180,7 +180,7 @@ const Navbar: React.FC<NavbarProps> = ({
               setOpenMenu(!openMenu);
             }}
             id="mobile-menu"
-            className="flex sm:hidden h-full items-center justify-center cursor-pointer"
+            className="flex min-[689px]:hidden h-full items-center justify-center cursor-pointer"
           >
             <svg
               width="40"
@@ -219,7 +219,7 @@ const Navbar: React.FC<NavbarProps> = ({
               }}
               className="text-[25px] text-center font-bold w-full py-[20px] transition hover:bg-[#1a1a1a]/60"
             >
-              PROJECTS
+              BUSINESS
             </Link>
             <Link
               href="#blog"
@@ -231,6 +231,17 @@ const Navbar: React.FC<NavbarProps> = ({
               className="text-[25px] text-center font-bold w-full py-[20px] transition hover:bg-[#1a1a1a]/60"
             >
               BLOG
+            </Link>
+            <Link
+              href="#inventory"
+              onClick={(e) => {
+                setOpenMenu(!openMenu);
+                e.preventDefault();
+                handleNavLinkClick("inventory");
+              }}
+              className="text-[25px] text-center font-bold w-full py-[20px] transition hover:bg-[#1a1a1a]/60"
+            >
+              INVENTORY
             </Link>
             <Link
               href="#about"

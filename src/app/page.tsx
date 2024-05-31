@@ -39,7 +39,7 @@ export default function Home() {
           <div className="flex w-[90%] flex-col md:flex-row md:max-w-[800px] md:justify-center gap-[50px]">
             <div>
               <div className="flex items-center gap-[20px] relative">
-                <span className="font-black text-[25px] opacity-50 text-stroke-1 text-stroke-white text-fill-black absolute left-[-50px]">
+                <span className="font-black text-[25px] opacity-50 text-stroke-1 text-stroke-white text-fill-black absolute max-[924px]:bottom-[70px] min-[925px]:left-[-50px]">
                   01
                 </span>
                 <h1 className="font-montserrat text-[50px] font-black leading-[70px]">
@@ -133,7 +133,7 @@ export default function Home() {
         <div
           id="inventory"
           ref={inventoryRef}
-          className="flex flex-col items-start gap-[50px] w-[800px] py-[100px]"
+          className="flex flex-col items-start gap-[50px] w-[90%] md:max-w-[800px] py-[100px]"
         >
           <InventorySection />
         </div>
