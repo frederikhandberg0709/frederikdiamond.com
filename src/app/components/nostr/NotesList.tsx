@@ -77,7 +77,7 @@ const ProfileFeed: React.FC<ProfileFeedProps> = ({
   const maxElements = 5;
 
   const hideMediaLinks = (content: string) => {
-    const regex = /https:\/\/.*\.(jpg|png|mp4|avi)/gi;
+    const regex = /https:\/\/.*\.(jpg|png|mp4|avi|mov)/gi;
     return content.replace(regex, "");
   };
 
