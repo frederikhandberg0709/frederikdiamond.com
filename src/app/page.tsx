@@ -100,7 +100,7 @@ export default function Home() {
         >
           <div className="flex flex-col items-center w-[90%] sm:w-full">
             <div className="flex items-center gap-[20px] relative">
-              <span className="font-black text-[25px] opacity-50 text-stroke-1 text-stroke-white text-fill-black absolute max-[924px]:bottom-[150px] min-[925px]:left-[-50px]">
+              <span className="font-black text-[25px] opacity-50 text-stroke-1 text-stroke-white text-fill-black absolute max-[464px]:bottom-[150px] max-[924px]:bottom-[70px]  min-[925px]:left-[-50px]">
                 03
               </span>
               <h1 className="font-bold text-[50px] sm:text-center">
@@ -135,7 +135,7 @@ export default function Home() {
         <div
           id="inventory"
           ref={inventoryRef}
-          className="flex flex-col items-start gap-[50px] w-[90%] md:max-w-[800px] py-[100px]"
+          className="flex flex-col items-start gap-[50px] max-md:w-[90%] md:max-w-[800px] mx-[25px] py-[100px]"
         >
           <InventorySection />
         </div>

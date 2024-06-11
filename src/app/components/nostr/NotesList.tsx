@@ -97,13 +97,13 @@ const ProfileFeed: React.FC<ProfileFeedProps> = ({
 
   return (
     <>
-      <div className="flex flex-col gap-[20px] items-center">
+      <div className="flex flex-col gap-[20px] sm:gap-[10px] items-center">
         {filterEvents(events)
           .slice(0, maxElements)
           .map((event) => (
             <p
               key={event.id}
-              className="flex flex-col gap-[20px] w-screen items-center sm:flex-none"
+              className="flex flex-col gap-[20px] sm:gap-[10px] w-screen items-center sm:flex-none"
             >
               <div className="flex flex-col gap-[10px] sm:w-[600px] w-[90%] sm:border border-gray-900 hover:border-gray-800 transition duration-200 bg-black sm:p-[15px] sm:rounded-[15px]">
                 {/* Author */}

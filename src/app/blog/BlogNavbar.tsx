@@ -93,8 +93,43 @@ const BlogNavbar: React.FC<NavbarProps> = ({
 
   return (
     <>
-      <div className="fixed z-[99] top-0 left-0 right-0 flex justify-center w-full">
-        <div className="flex justify-between w-[80%] pt-[10px]">
+      {/* Mobile */}
+      <div className="md:hidden fixed z-[99] bg-black/80 backdrop-blur-lg h-[60px] w-full">
+        <div className="flex justify-between items-center h-full mx-[50px]">
+          {/* Brand */}
+          <Link href="/" className="text-center leading-[25px] group">
+            <p className="text-[20px] font-black text-[#4FACFE] group-hover:drop-shadow-[0_0px_15px_rgba(79,172,254,1)] transition-all ease-in-out duration-200">
+              FREDERIK
+            </p>
+            <p className="text-[20px] font-black text-[#FE5196] group-hover:drop-shadow-[0_0px_15px_rgba(254,81,150,1)] transition-all ease-in-out duration-200">
+              DIAMOND
+            </p>
+          </Link>
+          <div
+            onClick={() => {
+              //setOpenMenu(!openMenu);
+            }}
+            id="mobile-menu"
+            className="flex h-full items-center justify-center cursor-pointer"
+          >
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill="#ffffff"
+                d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zm0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zM3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop */}
+      <div className="hidden fixed z-[99] top-0 left-0 right-0 md:flex justify-center w-full">
+        <div className="flex justify-between w-[95%] min-[940px]:w-[80%] pt-[10px]">
           {/* Brand */}
           <Link href="/" className="text-center leading-[25px] group">
             <p className="text-[20px] font-black text-[#4FACFE] group-hover:drop-shadow-[0_0px_15px_rgba(79,172,254,1)] transition-all ease-in-out duration-200">
@@ -169,7 +204,7 @@ const BlogNavbar: React.FC<NavbarProps> = ({
               </button>
             </div>
           </div>
-          <div></div>
+          <div className="hidden min-[1000px]:block w-[100px]"></div>
         </div>
       </div>
       {/* Filter menu */}
