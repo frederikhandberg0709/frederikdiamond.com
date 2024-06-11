@@ -65,7 +65,12 @@ export default class Contact extends React.Component<{}, State> {
     return (
       <>
         {/* Contact Form */}
-        <div className="w-[500px]">
+        <p className="sm:hidden">
+          Contact form currently hidden on mobile.
+          <br />
+          Working on it...
+        </p>
+        <div className="hidden sm:w-[500px]">
           <form
             action="mailto:hello@frederikdiamond.com"
             method="post"

@@ -101,8 +101,11 @@ const ProfileFeed: React.FC<ProfileFeedProps> = ({
         {filterEvents(events)
           .slice(0, maxElements)
           .map((event) => (
-            <p key={event.id}>
-              <div className="flex flex-col gap-[10px] w-[600px] border border-gray-900 hover:border-gray-800 transition duration-200 bg-black p-[15px] rounded-[15px]">
+            <p
+              key={event.id}
+              className="flex flex-col gap-[20px] w-screen items-center sm:flex-none"
+            >
+              <div className="flex flex-col gap-[10px] sm:w-[600px] w-[90%] sm:border border-gray-900 hover:border-gray-800 transition duration-200 bg-black sm:p-[15px] sm:rounded-[15px]">
                 {/* Author */}
                 <div className="flex items-center justify-between">
                   <Link
@@ -177,6 +180,7 @@ const ProfileFeed: React.FC<ProfileFeedProps> = ({
                 zapCount={event.zap_count}
               /> */}
               </div>
+              <div className="h-[1px] w-full sm:h-0 bg-white/10"></div>
             </p>
           ))}
       </div>

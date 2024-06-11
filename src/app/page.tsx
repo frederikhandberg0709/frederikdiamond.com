@@ -24,7 +24,7 @@ export default function Home() {
   const [contactVisibility, setContactVisibility] = useState<boolean>(true);
 
   return (
-    <main>
+    <main className="w-full flex flex-col items-center">
       <Navbar
         homeRef={homeRef}
         businessRef={businessRef}
