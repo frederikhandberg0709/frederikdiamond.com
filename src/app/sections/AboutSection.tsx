@@ -50,7 +50,7 @@ export default function AboutSection() {
         Monero), privacy, freedom, anonymity, and decentralized protocols (for
         instance Nostr).
       </p>
-      <div className="relative my-[40px] h-[60px]">
+      <div className="relative my-[40px] h-[120px] sm:h-[60px]">
         <h2
           className={`text-[40px] font-black absolute z-10 text-black hover:text-white ${montserrat}`}
         >

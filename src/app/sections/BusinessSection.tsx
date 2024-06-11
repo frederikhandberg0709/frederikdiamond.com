@@ -55,7 +55,7 @@ export default function BusinessSection() {
             ForwardFuture<span className="opacity-50">.xyz</span>
           </Link>
         </div>
-        <div className="flex gap-[100px]">
+        <div className="flex flex-col sm:flex-row gap-[100px]">
           <div className="flex flex-col items-center gap-[5px]">
             <p className="font-medium opacity-50">Consumer Technology</p>
             <Link

@@ -96,16 +96,18 @@ export default function Home() {
         <div
           id="blog"
           ref={blogRef}
-          className="flex flex-col items-center gap-[50px] w-[800px] py-[100px]"
+          className="flex flex-col items-center gap-[50px] w-full min-[800px]:w-[800px] py-[100px]"
         >
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center w-[90%] sm:w-full">
             <div className="flex items-center gap-[20px] relative">
-              <span className="font-black text-[25px] opacity-50 text-stroke-1 text-stroke-white text-fill-black absolute left-[-50px]">
+              <span className="font-black text-[25px] opacity-50 text-stroke-1 text-stroke-white text-fill-black absolute max-[924px]:bottom-[150px] min-[925px]:left-[-50px]">
                 03
               </span>
-              <h1 className="font-bold text-[50px]">MY NOSTR BLOG</h1>
+              <h1 className="font-bold text-[50px] sm:text-center">
+                MY NOSTR BLOG
+              </h1>
             </div>
-            <p className="text-center text-[15px] opacity-75">
+            <p className="sm:text-center text-[15px] opacity-75">
               On my Nostr blog, I write about the topics I{"’"}m passionate
               about.
               <br />
@@ -143,7 +145,7 @@ export default function Home() {
         <div
           id="about"
           ref={aboutRef}
-          className="flex flex-col items-center gap-[50px] pb-[100px] w-[90%] md:max-w-[800px] py-[100px]"
+          className="flex flex-col items-center gap-[50px] pb-[100px] w-full md:max-w-[800px] mx-[25px] py-[100px]"
         >
           <AboutSection />
         </div>

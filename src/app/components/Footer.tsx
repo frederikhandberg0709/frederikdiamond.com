@@ -135,7 +135,7 @@ const Footer: React.FC<Props> = ({ contactVisibility }) => {
             <span className="font-semibold">FREDERIK DIAMOND</span>
           </p>
         </div>
-        <div className="min-[2000px]:hidden">
+        <div className="hidden sm:visible in-[2000px]:hidden">
           <div className="footer-gradient"></div>
           <Image
             src={Noise}
