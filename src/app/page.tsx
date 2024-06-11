@@ -119,7 +119,7 @@ export default function Home() {
             <p className="mt-[15px] text-[16px]">
               Visit{" "}
               <Link
-                href="frederikdiamond.com/blog"
+                href="https://frederikdiamond.com/frederikdiamond.com/blog"
                 className="font-semibold text-blue-400 hover:text-blue-500 hover:underline transition ease-in-out duration-150"
               >
                 frederikdiamond.com/blog

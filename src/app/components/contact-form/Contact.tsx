@@ -65,12 +65,7 @@ export default class Contact extends React.Component<{}, State> {
     return (
       <>
         {/* Contact Form */}
-        <p className="sm:hidden">
-          Contact form currently hidden on mobile.
-          <br />
-          Working on it...
-        </p>
-        <div className="hidden sm:visible sm:w-[500px]">
+        <div className="w-full px-[15px] sm:w-[500px]">
           <form
             action="mailto:hello@frederikdiamond.com"
             method="post"
@@ -83,7 +78,7 @@ export default class Contact extends React.Component<{}, State> {
                 name="email"
                 value={this.state.email}
                 onChange={this.handleChange}
-                className="h-16 w-[500px] rounded-[15px] bg-transparent px-[20px] py-5 outline-none border-2 border-gray-800 hover:border-[#418DFF] focus:border-[#418DFF] transition-all duration-300 ease-in-out"
+                className="h-16 w-full sm:full rounded-[15px] bg-transparent px-[20px] py-5 outline-none border-2 border-gray-800 hover:border-[#418DFF] focus:border-[#418DFF] transition-all duration-300 ease-in-out"
                 placeholder="name@example.com"
                 autoComplete="off"
               />
@@ -101,7 +96,7 @@ export default class Contact extends React.Component<{}, State> {
                 name=""
                 // value={this.state.usernameEmail}
                 onChange={this.handleChange}
-                className="h-16 w-[500px] rounded-[15px] bg-transparent px-[20px] py-5 outline-none border-2 border-gray-800 hover:border-[#418DFF] focus:border-[#418DFF] transition-all duration-300 ease-in-out"
+                className="h-16 w-full sm:w-full rounded-[15px] bg-transparent px-[20px] py-5 outline-none border-2 border-gray-800 hover:border-[#418DFF] focus:border-[#418DFF] transition-all duration-300 ease-in-out"
                 placeholder="name@example.com"
                 autoComplete="off"
               />

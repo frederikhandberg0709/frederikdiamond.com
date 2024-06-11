@@ -112,7 +112,7 @@ const Footer: React.FC<Props> = ({ contactVisibility }) => {
               Check the code here:
             </p>
             <Link
-              href="https://github.com/frederikdiamond/frederikdiamond-personal_website"
+              href="https://github.com/frederikdiamond/frederikdiamond.com.git"
               target="_blank"
               className="flex items-center gap-[5px] mt-[15px] px-[10px] py-[10px] border-solid border-white border-[3px] rounded-lg font-medium text-[17px] group hover:bg-white hover:drop-shadow-[0_5px_40px_rgba(255,255,255,0.35)] transition-all ease-in-out"
             >
