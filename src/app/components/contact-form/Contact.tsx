@@ -70,7 +70,7 @@ export default class Contact extends React.Component<{}, State> {
           <br />
           Working on it...
         </p>
-        <div className="hidden sm:w-[500px]">
+        <div className="hidden sm:visible sm:w-[500px]">
           <form
             action="mailto:hello@frederikdiamond.com"
             method="post"
