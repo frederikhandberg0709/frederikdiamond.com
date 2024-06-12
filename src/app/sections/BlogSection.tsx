@@ -4,7 +4,7 @@ import NotesList from "../components/nostr/NotesList";
 export default function BlogSection() {
   return (
     <div className="flex flex-col items-center relative">
-      <div className="my-[20px]">
+      <div>
         <NotesList activeSection="all" filterType="all" />
       </div>
 
@@ -16,12 +16,6 @@ export default function BlogSection() {
           Visit my blog
         </Link>
       </div>
-      {/* <Link
-        href="https://primal.net/p/npub1nj0crmtetu84a7j43yegy358mp8u0e4ye7ndkhtd8dg0edll4mpqn52gqz"
-        className="font-semibold text-[15px] mt-[10px] transition-all ease-in-out hover:text-purple-500"
-      >
-        Go to my Nostr profile
-      </Link> */}
     </div>
   );
 }

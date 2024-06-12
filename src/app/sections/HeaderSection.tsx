@@ -18,7 +18,7 @@ export default function HeaderSection() {
     <div className="flex justify-center w-full">
       <header className="flex flex-col items-center gap-[20px] h-[100vh] z-10">
         <h1
-          className="mt-[250px] z-10 text-[25px] text-center leading-[45px] transition-color duration-300"
+          className="mt-[500px] z-10 text-[25px] text-center leading-[45px] transition-color duration-300"
           style={{ color: textColor }}
         >
           Building{" "}

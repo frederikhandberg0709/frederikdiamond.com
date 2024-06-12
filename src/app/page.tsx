@@ -11,6 +11,9 @@ import InventorySection from "./sections/InventorySection";
 import AboutSection from "./sections/AboutSection";
 import BlogSection from "./sections/BlogSection";
 import BusinessSection from "./sections/BusinessSection";
+import Image from "next/image";
+import Noise from "/public/noise.svg";
+import "./components/gradients.css";
 // import Noise from "../../public/noise.svg";
 
 export default function Home() {
@@ -151,8 +154,16 @@ export default function Home() {
         </div>
       </div>
       {/* Contact Section */}
-      <div ref={contactRef}>
+      <div ref={contactRef} className="relative w-full">
         <Footer contactVisibility={contactVisibility} />
+        <div className="absolute bottom-0 h-full w-full hidden sm:block min-[2000px]:hidden">
+          <div className="footer-gradient"></div>
+          <Image
+            src={Noise}
+            className="absolute z-[-19] bottom-0 w-full h-full object-cover bg-no-repeat"
+            alt="Decoration"
+          />
+        </div>
       </div>
     </main>
   );

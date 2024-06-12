@@ -10,6 +10,7 @@ import ButtonMailto from "./ButtonMailto";
 import ProtonMail from "public/protonmail.svg";
 import Session from "public/session.svg";
 import SimpleX from "public/simplex.svg";
+import ContactForm from "./ContactForm";
 
 type State = {
   email: string;
@@ -65,73 +66,7 @@ export default class Contact extends React.Component<{}, State> {
     return (
       <>
         {/* Contact Form */}
-        <div className="w-full px-[15px] sm:w-[500px]">
-          <form
-            action="mailto:hello@frederikdiamond.com"
-            method="post"
-            className="flex flex-col items-center gap-[20px] w-full"
-          >
-            <div className="floating-input relative w-full">
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={this.state.email}
-                onChange={this.handleChange}
-                className="h-16 w-full sm:full rounded-[15px] bg-transparent px-[20px] py-5 outline-none border-2 border-gray-800 hover:border-[#418DFF] focus:border-[#418DFF] transition-all duration-300 ease-in-out"
-                placeholder="name@example.com"
-                autoComplete="off"
-              />
-              <label
-                htmlFor="email"
-                className="text-gray-400 pointer-events-none absolute top-0 left-0 h-full origin-left transform px-[25px] py-5 transition-all duration-150 ease-in-out"
-              >
-                Email (required)
-              </label>
-            </div>
-            <div className="floating-input relative w-full">
-              <input
-                type="subject"
-                id="subject"
-                name=""
-                // value={this.state.usernameEmail}
-                onChange={this.handleChange}
-                className="h-16 w-full sm:w-full rounded-[15px] bg-transparent px-[20px] py-5 outline-none border-2 border-gray-800 hover:border-[#418DFF] focus:border-[#418DFF] transition-all duration-300 ease-in-out"
-                placeholder="name@example.com"
-                autoComplete="off"
-              />
-              <label
-                htmlFor="email"
-                className="text-gray-400 pointer-events-none absolute top-0 left-0 h-full origin-left transform px-[25px] py-5 transition-all duration-150 ease-in-out"
-              >
-                Subject
-              </label>
-            </div>
-
-            <div className="floating-input relative w-full">
-              <textarea
-                name="message"
-                placeholder="Message"
-                className="border-2 border-gray-800 hover:border-blue-500 focus:border-blue-500 min-h-[200px] bg-transparent outline-none px-[20px] py-5 rounded-xl w-full transition ease-in-out"
-                value={this.state.message}
-                onChange={this.handleChange}
-                required
-              />
-              <label
-                htmlFor="message"
-                className="text-gray-400 pointer-events-none absolute top-0 left-0 h-full origin-left transform px-[25px] py-5 transition-all duration-150 ease-in-out"
-              >
-                Message (required)
-              </label>
-            </div>
-            <input
-              type="submit"
-              className="bg-blue-500 font-semibold text-[15px] px-[20px] py-[12px] rounded-md cursor-pointer mt-[10px] relative bottom-0 hover:drop-shadow-[0_10px_30px_rgba(59,130,246,0.75)] hover:bottom-[5px] transition-all ease-in-out disabled:cursor-not-allowed disabled:bg-[#418DFF]/20 disabled:shadow-none disabled:bottom-0"
-              value="SEND"
-              disabled={!this.state.email || !this.state.message}
-            />
-          </form>
-        </div>
+        <ContactForm />
 
         {/* Contact Options */}
         <div className="flex flex-col xl:flex-row gap-[20px] mt-[100px]">

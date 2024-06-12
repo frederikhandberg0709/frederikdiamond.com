@@ -1,15 +1,9 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-// import Twitter from "../../../public/twitter.svg";
 import Xlogo from "../../../public/x-logo.svg";
 import Nostr from "../../../public/nostr.png";
 import Instagram from "../../../public/instagram.svg";
-import Noise from "../../../public/noise.svg";
 import Contact from "./contact-form/Contact";
-import "./gradients.css";
 import { Montserrat } from "next/font/google";
 
 interface Props {
@@ -22,7 +16,7 @@ const Footer: React.FC<Props> = ({ contactVisibility }) => {
   return (
     <>
       {/* Contact & Footer */}
-      <div id="contact" className="relative">
+      <div id="contact">
         <div className="relative z-10 h-full flex flex-col items-center">
           <div className="flex flex-col items-center mt-[100px]">
             {/* Contact */}
@@ -42,8 +36,6 @@ const Footer: React.FC<Props> = ({ contactVisibility }) => {
                 </h1>
               </div>
               <p className="text-gray-400 text-center">
-                The contact form below is not functional yet.
-                <br />
                 Please send an email directly to{" "}
                 <Link
                   href="mailto:hello@frederikdiamond.com"
@@ -51,6 +43,8 @@ const Footer: React.FC<Props> = ({ contactVisibility }) => {
                 >
                   hello@frederikdiamond.com
                 </Link>
+                <br />
+                or use the contact form below.
               </p>
               <Contact />
             </div>
@@ -134,14 +128,6 @@ const Footer: React.FC<Props> = ({ contactVisibility }) => {
             MADE WITH ❤️ BY{" "}
             <span className="font-semibold">FREDERIK DIAMOND</span>
           </p>
-        </div>
-        <div className="hidden sm:visible in-[2000px]:hidden">
-          <div className="footer-gradient"></div>
-          <Image
-            src={Noise}
-            className="absolute z-[-19] bottom-0 w-full h-full object-cover bg-no-repeat"
-            alt="Decoration"
-          />
         </div>
       </div>
     </>
