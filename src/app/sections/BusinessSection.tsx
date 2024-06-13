@@ -45,7 +45,7 @@ export default function BusinessSection() {
         growth rates of agricultural plants.
       </p>
       {/* Company Structure */}
-      <div className="flex flex-col items-center gap-[100px] mt-[50px]">
+      <div className="flex flex-col items-center gap-[100px] sm:gap-[35px] mt-[50px]">
         <div className="flex flex-col items-center">
           <p className="font-medium opacity-50">Holding Company</p>
           <Link
@@ -55,8 +55,19 @@ export default function BusinessSection() {
             ForwardFuture<span className="opacity-50">.xyz</span>
           </Link>
         </div>
+        <div className="hidden sm:flex flex-col items-center">
+          <div className="border-2 border-white/30 h-[75px]"></div>
+          <div className="flex">
+            <div className="border-2 border-white/30 w-[170px]"></div>
+            <div className="border-2 border-white/30 w-[170px]"></div>
+          </div>
+          <div className="flex justify-between w-full">
+            <div className="border-2 border-white/30 h-[75px]"></div>
+            <div className="border-2 border-white/30 h-[75px]"></div>
+          </div>
+        </div>
         <div className="flex flex-col sm:flex-row gap-[100px]">
-          <div className="flex flex-col items-center gap-[5px]">
+          <div className="flex flex-col items-center gap-[5px] sm:w-[250px]">
             <p className="font-medium opacity-50">Consumer Technology</p>
             <Link
               href="https://happydiamond.tech"
@@ -76,7 +87,7 @@ export default function BusinessSection() {
               HAPPYDIAMOND.tech
             </p> */}
           </div>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center sm:w-[250px]">
             <p className="font-medium opacity-50">Biotechnology</p>
             <Link
               href="https://beyondbiology.tech"
