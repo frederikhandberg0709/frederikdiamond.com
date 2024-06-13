@@ -20,6 +20,7 @@ const BlogNavbar: React.FC<NavbarProps> = ({
   const [selectedContentTypes, setSelectedContentTypes] = useState<string[]>(
     []
   );
+  const [openBlogMenu, setOpenBlogMenu] = useState(false);
   const filterMenuRef = useRef<HTMLDivElement>(null);
   const filterButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -107,7 +108,7 @@ const BlogNavbar: React.FC<NavbarProps> = ({
           </Link>
           <div
             onClick={() => {
-              //setOpenMenu(!openMenu);
+              setOpenBlogMenu(!openBlogMenu);
             }}
             id="mobile-menu"
             className="flex h-full items-center justify-center cursor-pointer"
@@ -126,6 +127,33 @@ const BlogNavbar: React.FC<NavbarProps> = ({
           </div>
         </div>
       </div>
+
+      {openBlogMenu ? (
+        <div className="fixed z-[49] w-full h-full flex items-center justify-center bg-black/75 backdrop-blur-md">
+          <div className="flex flex-col w-full">
+            <button
+              className={`text-[25px] text-center font-bold w-full py-[20px] transition hover:bg-[#1a1a1a]/60`}
+            >
+              Timeline
+            </button>
+            <button
+              className={`text-[25px] text-center font-bold w-full py-[20px] transition hover:bg-[#1a1a1a]/60`}
+            >
+              Articles
+            </button>
+            <button
+              className={`text-[25px] text-center font-bold w-full py-[20px] transition hover:bg-[#1a1a1a]/60`}
+            >
+              Pictures
+            </button>
+            <button
+              className={`text-[25px] text-center font-bold w-full py-[20px] transition hover:bg-[#1a1a1a]/60`}
+            >
+              Videos
+            </button>
+          </div>
+        </div>
+      ) : null}
 
       {/* Desktop */}
       <div className="hidden fixed z-[99] top-0 left-0 right-0 md:flex justify-center w-full">

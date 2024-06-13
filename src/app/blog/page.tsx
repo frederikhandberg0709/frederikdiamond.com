@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import dynamic from "next/dynamic";
 import BlogNavbar from "./BlogNavbar";
@@ -16,6 +16,8 @@ const BlogPage = () => {
   const [activeSection, setActiveSection] = useState("timeline");
   const [direction, setDirection] = useState(0);
   const [filterType, setFilterType] = useState<string>("all");
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
 
   const handleSetActiveSection = (section: string) => {
     const currentIndex = sections.indexOf(activeSection);
@@ -23,6 +25,28 @@ const BlogPage = () => {
     setDirection(nextIndex > currentIndex ? 1 : -1);
     setActiveSection(section);
   };
+
+  const handleScroll = () => {
+    const currentScrollPos = window.pageYOffset;
+    const scrollDifference = Math.abs(currentScrollPos - prevScrollPos);
+
+    if (scrollDifference >= 50) {
+      if (prevScrollPos > currentScrollPos) {
+        setIsVisible(true); // Scrolling up
+      } else {
+        setIsVisible(false); // Scrolling down
+      }
+      setPrevScrollPos(currentScrollPos);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos, isVisible]);
 
   const variants: Variants = {
     enter: (direction: number) => ({
@@ -132,6 +156,13 @@ const BlogPage = () => {
           )}
         </AnimatePresence>
       </div>
+      <button
+        className={`sm:hidden fixed bottom-[30px] right-[20px] px-[20px] py-[10px] rounded-full shadow-lg shadow-blue-500/50 hover:shadow-blue-500/75 bg-gradient-to-b from-blue-500 to-blue-700 transition-transform duration-300 ease-in-out ${
+          isVisible ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        Filters
+      </button>
     </div>
   );
 };
