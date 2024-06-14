@@ -171,7 +171,7 @@ const BlogNavbar: React.FC<NavbarProps> = ({
           {/* Nav Menu */}
           <div className="flex rounded-full bg-black/50 backdrop-blur-xl z-[99] border-gradient">
             <div className="flex gap-[5px] p-[5px]">
-              <button
+              {/* <button
                 // className="px-[20px] py-[7px] font-medium rounded-full hover:bg-white/10 transition ease-in-out duration-200"
                 className={`px-[20px] py-[7px] font-medium rounded-full transition ease-in-out duration-200 ${
                   activeSection === "timeline"
@@ -181,7 +181,19 @@ const BlogNavbar: React.FC<NavbarProps> = ({
                 onClick={() => setActiveSection("timeline")}
               >
                 Timeline
-              </button>
+              </button> */}
+              <Link
+                href="/blog/timeline"
+                onClick={() => setActiveSection("timelinetest")}
+              >
+                Timline
+              </Link>
+              <Link
+                href="/blog/pictures"
+                onClick={() => setActiveSection("pictures")}
+              >
+                Pictures
+              </Link>
               <button
                 // className="px-[20px] py-[7px] font-medium rounded-full hover:bg-white/10 transition ease-in-out duration-200"
                 className={`px-[20px] py-[7px] font-medium rounded-full transition ease-in-out duration-200 ${
@@ -193,7 +205,7 @@ const BlogNavbar: React.FC<NavbarProps> = ({
               >
                 Articles
               </button>
-              <button
+              {/* <button
                 //   href="/pictures"
                 className={`px-[20px] py-[7px] font-medium rounded-full transition ease-in-out duration-200 ${
                   activeSection === "pictures"
@@ -203,7 +215,7 @@ const BlogNavbar: React.FC<NavbarProps> = ({
                 onClick={() => setActiveSection("pictures")}
               >
                 Pictures
-              </button>
+              </button> */}
               <button
                 className={`px-[20px] py-[7px] font-medium rounded-full transition ease-in-out duration-200 ${
                   activeSection === "videos"

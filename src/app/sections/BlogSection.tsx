@@ -5,7 +5,7 @@ export default function BlogSection() {
   return (
     <div className="flex flex-col items-center relative">
       <div>
-        <NotesList activeSection="all" filterType="all" />
+        <NotesList activeSection="all" filterType="all" maxElements={5} />
       </div>
 
       <div className="sticky flex justify-center items-end z-10 bottom-0 h-[150px] w-full bg-gradient-to-b from-transparent to-black/90">

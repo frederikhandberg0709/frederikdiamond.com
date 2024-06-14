@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import colormix from "public/color_mix.svg";
+import Image from "next/image";
 
 export default function HeaderSection() {
   const [hovered, setHovered] = useState<string | null>(null);

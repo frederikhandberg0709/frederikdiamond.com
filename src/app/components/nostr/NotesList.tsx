@@ -4,20 +4,29 @@ import { NostrProvider, useNostrEvents, useProfile } from "nostr-react";
 import PostDropdownMenu from "./PostDropdownMenu";
 import PostActionButton from "./reaction-buttons/ReactionButtons";
 import styleHashtags from "../highlightHashtags";
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 
 interface NotesListProps {
   filterType: string;
   activeSection: string;
+  maxElements: number;
 }
 
-const NotesList: FC<NotesListProps> = ({ filterType, activeSection }) => {
+const NotesList: FC<NotesListProps> = ({
+  filterType,
+  activeSection,
+  maxElements,
+}) => {
   const relayUrls = ["wss://relay.primal.net", "wss://relay.damus.io"];
 
   return (
     <NostrProvider relayUrls={relayUrls} debug={true}>
       {/* <Profile /> */}
-      <ProfileFeed filterType={filterType} activeSection={activeSection} />
+      <ProfileFeed
+        filterType={filterType}
+        activeSection={activeSection}
+        maxElements={maxElements}
+      />
     </NostrProvider>
   );
 };
@@ -25,12 +34,15 @@ const NotesList: FC<NotesListProps> = ({ filterType, activeSection }) => {
 interface ProfileFeedProps {
   filterType: string;
   activeSection: string;
+  maxElements: number;
 }
 
 const ProfileFeed: React.FC<ProfileFeedProps> = ({
   filterType,
   activeSection,
+  maxElements,
 }) => {
+  const [overlayImage, setOverlayImage] = useState<string | null>(null);
   const { events } = useNostrEvents({
     filter: {
       authors: [
@@ -74,8 +86,6 @@ const ProfileFeed: React.FC<ProfileFeedProps> = ({
     return time;
   }
 
-  const maxElements = 5;
-
   const hideMediaLinks = (content: string) => {
     const regex = /https:\/\/.*\.(jpg|png|mp4|avi|mov)/gi;
     return content.replace(regex, "");
@@ -93,6 +103,22 @@ const ProfileFeed: React.FC<ProfileFeedProps> = ({
       if (filterType === "all") return true;
       return false;
     });
+  };
+
+  const handleImageClick = (src: string) => {
+    setOverlayImage(src);
+    document.body.style.overflow = "hidden"; // Disable scrolling
+  };
+
+  const closeOverlay = () => {
+    setOverlayImage(null);
+    document.body.style.overflow = "auto"; // Enable scrolling
+  };
+
+  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      closeOverlay();
+    }
   };
 
   return (
@@ -153,6 +179,7 @@ const ProfileFeed: React.FC<ProfileFeedProps> = ({
                     <img
                       src={match[0]}
                       alt="This is an image uploaded by FREDERIK DIAMOND's profile."
+                      onClick={() => handleImageClick(match[0])}
                       className="rounded-[10px]"
                     />
                   ) : null;
@@ -184,6 +211,28 @@ const ProfileFeed: React.FC<ProfileFeedProps> = ({
             </p>
           ))}
       </div>
+
+      {/* Image Overlay */}
+      {overlayImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75"
+          onClick={handleOverlayClick}
+        >
+          <div className="relative max-w-full max-h-full overflow-hidden">
+            <button
+              className="absolute top-0 right-0 m-4 font-semibold text-white bg-black/50 hover:bg-black/95 rounded-full px-2 py-1"
+              onClick={closeOverlay}
+            >
+              Close
+            </button>
+            <img
+              src={overlayImage}
+              alt="Fullscreen"
+              className="max-h-[90vh] max-w-[90vw] rounded-lg"
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 };
