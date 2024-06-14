@@ -1,5 +1,5 @@
 import Link from "next/link";
-import NotesList from "../components/nostr/NotesList";
+import NotesList from "../nostr-blog/NotesList";
 
 export default function BlogSection() {
   return (

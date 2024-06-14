@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import dynamic from "next/dynamic";
-import BlogNavbar from "./BlogNavbar";
+import BlogNavbar from "../components/nostr-blog/BlogNavbar";
 import Layout from "./layout";
 
 const Timeline = dynamic(() => import("./Timeline"));
@@ -116,19 +116,6 @@ const BlogPage = () => {
                 exit="exit"
                 transition={{ duration: 0.5, ease: "easeInOut" }}
               >
-                <Timeline />
-              </motion.div>
-            )}
-            {activeSection === "timelinetest" && (
-              <motion.div
-                key="timeline"
-                custom={direction}
-                variants={variants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-              >
                 <TimelinePage />
               </motion.div>
             )}
@@ -146,19 +133,6 @@ const BlogPage = () => {
               </motion.div>
             )}
             {activeSection === "pictures" && (
-              <motion.div
-                key="pictures"
-                custom={direction}
-                variants={variants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-              >
-                <Pictures />
-              </motion.div>
-            )}
-            {activeSection === "PicturesPage" && (
               <motion.div
                 key="pictures"
                 custom={direction}

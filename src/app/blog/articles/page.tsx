@@ -1,5 +1,7 @@
+"use client";
+
 import { motion } from "framer-motion";
-import NotesList from "../../components/nostr/NotesList";
+import NotesList from "../../components/nostr-blog/NotesList";
 
 const ArticlesPage = () => {
   return (

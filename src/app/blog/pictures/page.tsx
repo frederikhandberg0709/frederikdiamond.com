@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import NotesList from "@/app/components/nostr/NotesList";
+import NotesList from "@/app/components/nostr-blog/NotesList";
 
 export default function PicturesPage() {
   return (

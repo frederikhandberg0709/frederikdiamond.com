@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import NotesList from "../components/nostr/NotesList";
+import NotesList from "../components/nostr-blog/NotesList";
 
 const TimelinePage = () => {
   return (
@@ -8,8 +8,7 @@ const TimelinePage = () => {
       <p>
         🚧 UNDER CONSTRUCTION 🚧
         <br />
-        Sometimes images refuse to open in fullscreen. Seems to happen everytime
-        switching page, i.e. from Timeline to Pictures.
+        Fix filter menu not being in correct position if scrolling down.
       </p>
       <NotesList filterType="all" activeSection="timeline" maxElements={50} />
     </motion.div>
