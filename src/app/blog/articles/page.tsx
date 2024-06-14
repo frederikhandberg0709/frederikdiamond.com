@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import NotesList from "../../components/nostr-blog/NotesList";
 
-const ArticlesPage = () => {
+export default function Articles() {
   return (
     <motion.div className="mt-[70px]">
       <h1>Articles</h1>
@@ -15,6 +15,4 @@ const ArticlesPage = () => {
       />
     </motion.div>
   );
-};
-
-export default ArticlesPage;
+}

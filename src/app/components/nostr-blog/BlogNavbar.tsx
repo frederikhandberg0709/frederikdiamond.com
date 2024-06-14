@@ -13,7 +13,6 @@ interface NavbarProps {
     left: number;
     width: number;
   }) => void;
-  // onIsFilterButtonClick: React.Dispatch<React.SetStateAction<boolean>>;
   isFilterMenuOpen: boolean;
   closeFilterMenu: () => void;
   filterButtonRef: MutableRefObject<HTMLButtonElement | null>;
@@ -38,7 +37,7 @@ const BlogNavbar: React.FC<NavbarProps> = ({
       const buttonRect = filterButtonRef.current?.getBoundingClientRect();
       if (buttonRect) {
         onFilterButtonClick({
-          top: buttonRect.bottom + window.scrollY,
+          top: 75,
           left: buttonRect.left + buttonRect.width / 2,
           width: buttonRect.width,
         });
@@ -49,7 +48,7 @@ const BlogNavbar: React.FC<NavbarProps> = ({
   return (
     <>
       {/* Mobile */}
-      <div className="md:hidden fixed z-[99] bg-black/80 backdrop-blur-lg h-[60px] w-full">
+      <div className="md:hidden fixed top-0 left-0 right-0 z-[99] bg-black/80 backdrop-blur-lg h-[60px] w-full">
         <div className="flex justify-between items-center h-full mx-[50px]">
           {/* Brand */}
           <Link href="/" className="text-center leading-[25px] group">
@@ -83,7 +82,7 @@ const BlogNavbar: React.FC<NavbarProps> = ({
       </div>
 
       {openBlogMenu ? (
-        <div className="fixed z-[49] w-full h-full flex items-center justify-center bg-black/75 backdrop-blur-md">
+        <div className="fixed inset-0 z-[49] w-full h-full flex items-center justify-center bg-black/75 backdrop-blur-md">
           <div className="flex flex-col w-full">
             <button
               className={`text-[25px] text-center font-bold w-full py-[20px] transition hover:bg-[#1a1a1a]/60`}

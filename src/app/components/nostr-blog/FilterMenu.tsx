@@ -103,7 +103,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({
       ref={menuRef}
       className="fixed z-[98] w-[300px] h-auto rounded-2xl bg-black/50 backdrop-blur-xl p-[15px] border border-white/10"
       style={{
-        top: position.top + 20,
+        top: position.top,
         left: position.left,
         transform: "translate(-50%, 0)",
       }}
