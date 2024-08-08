@@ -13,7 +13,7 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "framer-motion": "^11.2.4",
-    "next": "14.0.2",
+    "next": "^14.2.5",
     "nostr-react": "^0.7.0",
     "react": "^18",
     "react-dom": "^18",

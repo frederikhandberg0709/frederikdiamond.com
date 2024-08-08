@@ -7,9 +7,9 @@ import Image from "next/image";
 import CopyToClipboard from "../CopyToClipboard";
 import ContactPopup from "./ContactPopup";
 import ButtonMailto from "./ButtonMailto";
-import ProtonMail from "public/protonmail.svg";
-import Session from "public/session.svg";
-import SimpleX from "public/simplex.svg";
+import ProtonMail from "/public/protonmail.svg";
+import Session from "/public/session.svg";
+import SimpleX from "/public/simplex.svg";
 import ContactForm from "./ContactForm";
 
 type State = {
@@ -28,15 +28,6 @@ export default class Contact extends React.Component<{}, State> {
   handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const target = e.target as HTMLInputElement | HTMLTextAreaElement;
     const { name, value } = target;
-
-    // Assure TypeScript that the dynamic key is a valid key of the component's state
-    // this.setState(
-    //   (prevState) =>
-    //     ({
-    //       ...prevState,
-    //       [name]: value,
-    //     } as Pick<State, keyof State>)
-    // );
 
     this.setState((prevState) => ({
       ...prevState,

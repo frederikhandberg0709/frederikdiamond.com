@@ -42,7 +42,9 @@ export default function BusinessSection() {
       <p className="mt-[20px]">
         <b>BeyondBiology</b> is combining artificial intelligence (AI) with
         biotechnology to develop chemical fertilizers aimed at enhancing the
-        growth rates of agricultural plants.
+        growth rates of agricultural plants. This is a far-out-in-the-future
+        project, but I am incredibly passionate about combining biotechnology
+        and AI.
       </p>
       {/* Company Structure */}
       <div className="flex flex-col items-center gap-[100px] sm:gap-[35px] mt-[50px]">
