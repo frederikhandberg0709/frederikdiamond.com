@@ -22,8 +22,8 @@ export default function HomeSection() {
                 conflict with the right to privacy.
               </p>
               <p>
-                For example, the British government has proposed a bill that
-                would make end-to-end encrypted messaging illegal.
+                Law enforcement in my home country, Denmark, is looking to
+                implement video surveillance with facial recognition technology.
               </p>
               <p>
                 Governments around the world are at war with our rights to

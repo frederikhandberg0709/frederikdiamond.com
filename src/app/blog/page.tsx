@@ -17,28 +17,28 @@ const BlogPage = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
 
-  const handleSetActiveSection = (section: string) => {
-    const currentIndex = sections.indexOf(activeSection);
-    const nextIndex = sections.indexOf(section);
-    setDirection(nextIndex > currentIndex ? 1 : -1);
-    setActiveSection(section);
-  };
-
-  const handleScroll = () => {
-    const currentScrollPos = window.pageYOffset;
-    const scrollDifference = Math.abs(currentScrollPos - prevScrollPos);
-
-    if (scrollDifference >= 50) {
-      if (prevScrollPos > currentScrollPos) {
-        setIsVisible(true); // Scrolling up
-      } else {
-        setIsVisible(false); // Scrolling down
-      }
-      setPrevScrollPos(currentScrollPos);
-    }
-  };
+  // const handleSetActiveSection = (section: string) => {
+  //   const currentIndex = sections.indexOf(activeSection);
+  //   const nextIndex = sections.indexOf(section);
+  //   setDirection(nextIndex > currentIndex ? 1 : -1);
+  //   setActiveSection(section);
+  // };
 
   useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      const scrollDifference = Math.abs(currentScrollPos - prevScrollPos);
+
+      if (scrollDifference >= 50) {
+        if (prevScrollPos > currentScrollPos) {
+          setIsVisible(true); // Scrolling up
+        } else {
+          setIsVisible(false); // Scrolling down
+        }
+        setPrevScrollPos(currentScrollPos);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {
@@ -46,23 +46,23 @@ const BlogPage = () => {
     };
   }, [prevScrollPos, isVisible]);
 
-  const variants: Variants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? "100%" : "-100%",
-      opacity: 0,
-      position: "absolute",
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-      position: "relative",
-    },
-    exit: (direction: number) => ({
-      x: direction < 0 ? "100%" : "-100%",
-      opacity: 0,
-      position: "absolute",
-    }),
-  };
+  // const variants: Variants = {
+  //   enter: (direction: number) => ({
+  //     x: direction > 0 ? "100%" : "-100%",
+  //     opacity: 0,
+  //     position: "absolute",
+  //   }),
+  //   center: {
+  //     x: 0,
+  //     opacity: 1,
+  //     position: "relative",
+  //   },
+  //   exit: (direction: number) => ({
+  //     x: direction < 0 ? "100%" : "-100%",
+  //     opacity: 0,
+  //     position: "absolute",
+  //   }),
+  // };
 
   // const variants = {
   //   enter: (direction: number) => ({
