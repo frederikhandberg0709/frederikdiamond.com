@@ -29,7 +29,7 @@ const Footer: React.FC<Props> = ({ contactVisibility }) => {
             >
               <div className="flex items-center gap-[20px] relative">
                 <span className="font-black text-[25px] opacity-50 text-stroke-1 text-stroke-white text-fill-black absolute left-[-50px]">
-                  06
+                  05
                 </span>
                 <h1 className={`font-bold text-[50px] ${montserrat}`}>
                   CONTACT

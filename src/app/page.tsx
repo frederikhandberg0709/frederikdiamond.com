@@ -7,10 +7,9 @@ import Navbar from "./components/Navbar";
 import Link from "next/link";
 import "./components/gradients.css";
 import HeaderSection from "./components/sections/HeaderSection";
-import InventorySection from "./components/sections/InventorySection";
 import AboutSection from "./components/sections/AboutSection";
 import BlogSection from "./components/sections/BlogSection";
-import BusinessSection from "./components/sections/BusinessSection";
+import ProjectsSection from "./components/sections/ProjectsSection";
 import Image from "next/image";
 import Noise from "/public/noise.svg";
 import "./components/gradients.css";
@@ -19,9 +18,8 @@ import HomeSection from "./components/sections/HomeSection";
 
 export default function Home() {
   const homeRef = useRef<HTMLDivElement>(null);
-  const businessRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
   const blogRef = useRef<HTMLDivElement>(null);
-  const inventoryRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
@@ -31,9 +29,8 @@ export default function Home() {
     <main className="w-full flex flex-col items-center">
       <Navbar
         homeRef={homeRef}
-        businessRef={businessRef}
+        projectsRef={projectsRef}
         blogRef={blogRef}
-        inventoryRef={inventoryRef}
         aboutRef={aboutRef}
         contactRef={contactRef}
       />
@@ -44,11 +41,11 @@ export default function Home() {
       {/* Business Section */}
       <div className="flex justify-center">
         <div
-          id="business"
-          ref={businessRef}
+          id="projects"
+          ref={projectsRef}
           className="flex flex-col items-center gap-[50px] pb-[100px] w-[90%] md:max-w-[800px] py-[100px]"
         >
-          <BusinessSection />
+          <ProjectsSection />
         </div>
       </div>
       {/* My Nostr Timeline */}
@@ -79,7 +76,7 @@ export default function Home() {
             <p className="mt-[15px] text-[16px]">
               Visit{" "}
               <Link
-                href="https://frederikdiamond.com/frederikdiamond.com/blog"
+                href="https://frederikdiamond.com/blog/timeline"
                 className="font-semibold text-blue-400 hover:text-blue-500 hover:underline transition ease-in-out duration-150"
               >
                 frederikdiamond.com/blog
@@ -88,16 +85,6 @@ export default function Home() {
             </p>
           </div>
           <BlogSection />
-        </div>
-      </div>
-      {/* Inventory Section */}
-      <div className="flex justify-center">
-        <div
-          id="inventory"
-          ref={inventoryRef}
-          className="flex flex-col items-start gap-[50px] max-md:w-[90%] md:max-w-[800px] mx-[25px] py-[100px]"
-        >
-          <InventorySection />
         </div>
       </div>
       {/* About Section */}
