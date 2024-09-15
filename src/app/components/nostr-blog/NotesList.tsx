@@ -87,7 +87,7 @@ const ProfileFeed: React.FC<ProfileFeedProps> = ({
   }
 
   const hideMediaLinks = (content: string) => {
-    const regex = /https:\/\/.*\.(jpg|png|mp4|avi|mov)/gi;
+    const regex = /https:\/\/.*\.(jpg|png|mp4|avi|mov|webp)/gi;
     return content.replace(regex, "");
   };
 
@@ -173,7 +173,7 @@ const ProfileFeed: React.FC<ProfileFeedProps> = ({
                 </p>
                 {/* Image */}
                 {(() => {
-                  const regex = /https:\/\/.*\.(jpg|png)/;
+                  const regex = /https:\/\/.*\.(jpg|png|webp)/;
                   const match = event.content.match(regex);
                   return match ? (
                     <img
