@@ -6,17 +6,13 @@ import { useState } from "react";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 type VisibilityState = {
-  cypherpunkSection: boolean;
   opensourceAndDecentralizationSection: boolean;
-  moneyAndTheState: boolean;
   effectiveAccelerationism: boolean;
 };
 
 export default function AboutSection() {
   const [visibility, setVisibility] = useState<VisibilityState>({
-    cypherpunkSection: false,
     opensourceAndDecentralizationSection: false,
-    moneyAndTheState: false,
     effectiveAccelerationism: false,
   });
 
@@ -41,85 +37,27 @@ export default function AboutSection() {
       <p>
         Hi 👋 My name is Frederik and I am from Denmark 🇩🇰
         <br />
-        <br />I have some big ambitious dreams. Some of which I am already
-        pursuing, and others require too many resources for me to pursue yet. I
-        {"'"}m currently studying for a degree in Software Engineering, so that
-        doesn{"'"}t leave me much time. But any chance I get, I{"'"}m working
-        hard on making my dreams come true. Except, of course, when I{"'"}m
-        hitting the trails on my dirt bike or capturing moments as a freelance
-        news photographer.
         <br />
-        <br />I am a big proponent of open-source software, crypto (mainly
-        Monero), privacy, freedom, anonymity, and decentralized protocols (for
-        instance Nostr).
+        Technology has always been my passion, ever since I was young. I{"'"}m a
+        creative person, always coming up with new ideas, and I think that{"'"}s
+        why I enjoy coding so much. I love that I can take my ideas and start
+        building them with just my MacBook.
+        <br />
+        <br />I{"'"}m currently studying for a degree in Software Engineering
+        while building fun projects in my spare time every chance I get. My
+        focus is on learning both web development and app development, diving
+        into the latest technologies, frameworks, and best practices.
+        <br />
+        <br />
+        I also enjoy experimenting with AI and machine learning using Python,
+        exploring different algorithms and techniques to understand how they can
+        be applied to solve real-world problems.
+        <br />
+        <br />
+        The idea of computers being able to think on their own and learn from
+        their mistakes, just like a human would, is truly fascinating to me.
       </p>
-      <div className="relative my-[40px] h-[120px] sm:h-[60px]">
-        <h2
-          className={`text-[40px] font-black absolute z-10 text-black hover:text-white ${montserrat}`}
-        >
-          CYPHERPUNK. E/ACC.
-        </h2>
-        <h2
-          className={`text-[40px] font-black text-stroke-2 text-stroke-white text-fill-black absolute ${montserrat}`}
-        >
-          CYPHERPUNK. E/ACC.
-        </h2>
-      </div>
-      <div className="flex flex-col gap-[40px]">
-        <div className="flex flex-col gap-[15px]">
-          <div
-            className={`flex gap-[20px] cursor-pointer transition duration-150 ease-in-out select-none ${
-              visibility.cypherpunkSection
-                ? "opacity-100"
-                : "opacity-50 hover:opacity-100"
-            }`}
-            onClick={() => toggleVisibility("cypherpunkSection")}
-          >
-            <h3 className="font-semibold text-[20px]">Cypherpunk</h3>
-            <Image
-              src={ArrowIcon}
-              alt="Arrow"
-              height={11}
-              className={`${
-                visibility.cypherpunkSection ? "rotate-180" : ""
-              } transform transition-transform duration-300 ease-in-out`}
-            />
-          </div>
-          <div
-            className={`transition-all duration-500 ease-in-out overflow-hidden ${
-              visibility.cypherpunkSection
-                ? "max-h-[500px] opacity-100"
-                : "max-h-0 opacity-0"
-            }`}
-          >
-            <p className="text-[15px]">
-              I hope that we will reach a future where the digital world becomes
-              a cypherpunk utopia. Right now, we are very far from that. Big
-              Tech controls almost all of the digital world. The truth is, that
-              most privacy preserving products suck. The user experience is just
-              horrible compared to what you{"'"}d expect after having used a
-              product by Big Tech. It all makes sense. Big Tech consists of huge
-              companies with loads of resources. It{"'"}s almost impossible to
-              compete with them. Especially, because the monetary incentive is
-              generally non existent in the open-source and privacy preserving
-              space. I mean, how many privacy tools do you hear about generating
-              a huge profit big enough to hire talented developers? Not many.
-              Most are run by passionate developers who work on those projects
-              in their spare time as hobbies — not fulltime jobs.
-              <br />
-              <br />
-              I am not saying you cannot make a profitable business by making
-              open source software. I think Proton, Red Hat, MongoDB, etc., are
-              great examples showing that it really is possible to create a
-              business that generates revenue even though their products are
-              fully or partly open source.
-              <br />
-              And I certainly think open source will win over closed source. It
-              will take. Probably a lot of time simply due to the large
-              corporations we are up against — but it will happen!
-            </p>
-          </div>
-        </div>
+      <div className="flex flex-col gap-[40px] mt-10">
         <div className="flex flex-col gap-[15px]">
           <div
             className={`flex gap-[20px] cursor-pointer transition duration-150 ease-in-out select-none ${
@@ -212,63 +150,7 @@ export default function AboutSection() {
             </p>
           </div>
         </div>
-        <div className="flex flex-col gap-[15px]">
-          <div
-            className={`flex gap-[20px] cursor-pointer transition duration-150 ease-in-out select-none ${
-              visibility.moneyAndTheState
-                ? "opacity-100"
-                : "opacity-50 hover:opacity-100"
-            }`}
-            onClick={() => toggleVisibility("moneyAndTheState")}
-          >
-            <h3 className="font-semibold text-[20px]">Money and the State</h3>
-            <Image
-              src={ArrowIcon}
-              alt="Arrow"
-              height={11}
-              className={`${
-                visibility.moneyAndTheState ? "rotate-180" : ""
-              } transform transition-transform duration-300 ease-in-out`}
-            />
-          </div>
-          <div
-            className={`transition-all duration-500 ease-in-out overflow-hidden ${
-              visibility.moneyAndTheState
-                ? "max-h-[500px] opacity-100"
-                : "max-h-0 opacity-0"
-            }`}
-          >
-            <p className="text-[15px]">
-              I think money and the State should be independent. In fact, I don
-              {"'"}t think the State should have any influence over the currency
-              we choose to use. It should be completely driven by the market —
-              meaning what people prefer. I believe people would eventually come
-              to the conclusion that privacy coins are to be preferred because
-              they are, well, private. Having a public ledger like Bitcoin is a
-              huge disadvantage when you are up against State powers and
-              companies (i.e. Chainalysis) who are doing everything they can to
-              track every transaction on the blockchain.
-              <br />
-              <br />
-              The big advantage Monero has over Bitcoin is that the Monero
-              blockchain is private by design. You know how on Bitcoin, you are
-              able to see every transaction on the network and how much people
-              have in their wallets? Well, that{"'"}s not possible on Monero.
-              The senders address is hidden by ring signatures, stealth
-              addresses hide the receivers address and transaction amounts are
-              also hidden on the network. Not to mention, even the amounts of
-              Monero held in a wallet is hidden from the network.
-              <br />
-              <br />
-              Is Monero perfect? Absolutely not. Privacy is an endless battle
-              which means Monero will need to keep evolving. The reason why I am
-              bullish on Monero compared to other privacy coins, is because of
-              the strong community behind it. Monero is getting updated quite
-              frequently in order to stay up-to-date with cutting-edge privacy
-              features.
-            </p>
-          </div>
-        </div>
+
         <div className="flex flex-col gap-[15px]">
           <div
             className={`flex gap-[20px] cursor-pointer transition duration-150 ease-in-out select-none ${
@@ -310,7 +192,7 @@ export default function AboutSection() {
               thoughtfully and ethically to push humanity forward.
               <br />
               <br />
-              Ultimately, being pro-technology means being pro-humanity.
+              Ultimately, I think being pro-technology means being pro-humanity.
             </p>
           </div>
         </div>
