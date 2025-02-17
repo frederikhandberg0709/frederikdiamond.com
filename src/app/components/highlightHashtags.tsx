@@ -1,4 +1,4 @@
-import React from "react";
+import React, { type JSX } from "react";
 
 function styleHashtags(content: string): JSX.Element {
   const regex = /(#\w+)/g;

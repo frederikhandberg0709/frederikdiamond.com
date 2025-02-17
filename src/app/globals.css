@@ -27,6 +27,12 @@ body {
   overflow-x: hidden;
 }
 
-.text-stroke-1 {
-  -webkit-text-stroke: 1px;
+@layer utilities {
+  .text-stroke-white {
+    -webkit-text-stroke: 1px white;
+  }
+
+  .text-fill-black {
+    color: black;
+  }
 }

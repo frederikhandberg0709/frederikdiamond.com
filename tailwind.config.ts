@@ -53,6 +53,7 @@ const config: Config = {
     textStrokeWidth: ["responsive"],
     paintOrder: ["responsive"],
   },
-  plugins: [require("tailwindcss-text-fill-stroke")()],
+  plugins: [require("tailwindcss/nesting")],
+  // plugins: [require("tailwindcss-text-fill-stroke")()],
 };
 export default config;

@@ -4,11 +4,11 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 interface NavbarProps {
-  homeRef: React.RefObject<HTMLElement>;
-  projectsRef: React.RefObject<HTMLElement>;
-  blogRef: React.RefObject<HTMLElement>;
-  aboutRef: React.RefObject<HTMLElement>;
-  contactRef: React.RefObject<HTMLElement>;
+  homeRef: React.RefObject<HTMLElement | null>;
+  projectsRef: React.RefObject<HTMLElement | null>;
+  blogRef: React.RefObject<HTMLElement | null>;
+  aboutRef: React.RefObject<HTMLElement | null>;
+  contactRef: React.RefObject<HTMLElement | null>;
 }
 
 const Navbar: React.FC<NavbarProps> = ({
